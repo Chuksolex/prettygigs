@@ -1,0 +1,69 @@
+// LandingPage.scss
+
+.tutor-message {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+  
+    .left-column {
+      width: 45%;
+      text-align: left;
+      background-color: #8567bb;
+      //background-image: url('./public/img/finegirl.jpg');
+      background-size: cover; 
+     background-position: center; /* Centers the background image */
+     
+       padding: 20px;
+       border-radius: 20px;
+       color: white;
+   
+    }
+  
+    .right-column {
+      width: 45%;
+      text-align: left;
+    }
+    .left-column2 {
+        width: 45%;
+      text-align: left;
+       
+      }
+    
+      .right-column2 {
+        width: 45%;
+        text-align: left;
+        background-color: #8567bb;
+        //background-image: url('./public/img/finegirl.jpg');
+        background-size: cover; 
+       background-position: center; /* Centers the background image */
+       
+         padding: 20px;
+         border-radius: 20px;
+         color: white;
+     
+      }
+  
+    // Media query for desktop
+    @media only screen and (max-width: 768px) {
+      .left-column {
+        width: 100%;
+        text-align: left;
+      }
+  
+      .right-column {
+        width: 100%;
+        text-align: left;
+      }
+      .left-column2 {
+        width: 100%;
+        text-align: left;
+      }
+  
+      .right-column2 {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+  

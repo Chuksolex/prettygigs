@@ -1,0 +1,81 @@
+
+
+.testimonialCard{
+    max-width: 320px;
+    max-height: 320px;
+    background-color: whitesmoke;
+    //align-self: center;     
+    display: flex;
+    flex-direction: column;
+    border: solid 0.5px rgb(119, 99, 119);
+    border-radius: 10px ;
+    margin:10px auto;
+    box-sizing: border-box;
+
+  
+ 
+
+   
+  
+  
+  h3{
+      font-size: 2.2rem;
+      font-weight: 500;
+  }
+  .testimonialCardTop{display: flex;
+      margin: 10px;
+      justify-content: center;
+      align-items: center;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+  }
+  h5 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+}
+  .testimonialCardDetails {
+    text-align: center;
+    //padding: 10px 10px;
+    box-sizing: border-box;
+
+   
+
+    .rating {
+      margin-bottom: 5px;
+
+      .star {
+        color: #ff8800;
+        font-size: 16px;
+        margin-right: 2px;
+
+        &.filled {
+          color: #ff8800;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      word-break: break-all;
+      
+    }
+  }
+}
+
+
+
+      /*Pretty gigs colors
+Deep green #30C8AA
+Light Green #90E8D7
+Yellow #FBB040
+Light Yello #FBC067
+Black #231F20
+Purple #8567B8
+Light Purple #C6B7DE
+*/
+

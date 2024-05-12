@@ -1,0 +1,45 @@
+.blog-post__date{
+  margin-bottom:0px;
+  line-height: 0.5;
+
+}
+.blogtitle{
+  @media( min-width: 768px){
+    font-size: 40px;
+    text-align: left;
+    margin-top: 50px;
+  }
+  
+  color: green;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    
+  }
+}
+.hor1{
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.card{
+  border: none;
+}
+.card-header{
+  background-color: 
+  #90E8D8;
+
+}
+.card-body{
+  background-color: 
+  #90E8D8;
+}
+.card-text {
+  margin-bottom: 5px; /* Adjust this value as needed */
+}
+.intro{
+  @media (min-width: 768px) {
+    width: 75%;
+    text-align: justify;
+    
+  }
+}

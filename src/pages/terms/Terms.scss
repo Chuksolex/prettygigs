@@ -1,0 +1,52 @@
+.terms-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #231F20;
+    }
+  
+    h2 {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #8567B8;
+    }
+  
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #231F20;
+  
+      a {
+        color: #8567B8;
+        text-decoration: none;
+        font-size: 16px ;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        font-size: 22px;
+      }
+  }
+
+        /*Pretty gigs colors
+Deep green #30C8AA
+Light Green #90E8D7
+Yellow #FBB040
+Light Yello #FBC067
+Black #231F20
+Purple #8567B8
+Light Purple #C6B7DE
+*/
+
+
+  

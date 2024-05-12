@@ -1,0 +1,55 @@
+.tutor-faq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    flex-wrap: wrap; 
+  
+
+    .container{
+        display: flex;
+        width: calc(50% );
+        flex-direction: column;
+
+        @media (max-width: 768px)  {
+            display: flex;
+            width: 100% ;
+            flex-direction: column;
+        
+       }
+
+        h3{
+            font-size: 18px; font-weight: 500; cursor: pointer;
+       
+        }
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            color: green;
+
+            span{
+                font-size: 14px;
+                font-weight: 500;
+                color: green;
+            }
+        }
+
+        hr{
+            background-color: rgb(243, 192, 192);
+            border-top: 3px dotted green;
+            height: 3px;
+            width: 100%;
+           
+        }
+        
+
+    }
+}
+
+/* color codes 
+He36b09 orange
+#2c78ba blue
+H000000 black
+#aaaaaa grey1
+#bbbbbb grey2
+#cccccc grey3 */

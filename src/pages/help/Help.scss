@@ -1,0 +1,25 @@
+.help-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+  
+      a {
+        color: #007bff;
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  

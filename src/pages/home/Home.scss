@@ -1,0 +1,263 @@
+.about-section {
+    display: flex;
+    justify-content: space-between;  // Space the children equally
+    align-items: center;  // Align items vertically in the center
+    padding: 20px;
+    margin: 20px auto;
+  
+    .about-featured {
+      flex: 1;  // Take up available space
+      max-width: 600px;  // Set a maximum width for the first column
+      padding-right: 20px;  // Add some spacing between the columns
+  
+      h3 {
+        font-size: 2.5rem;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        text-align: justify;
+  
+       
+        
+      }
+     
+    }
+  
+    .team1-pics {
+      flex: 1;  // Take up available space
+  
+      img {
+        width: 100%;  // Make the image fill the container
+        height: 300px;
+        border-radius: 8px;  // Add some border-radius for styling
+      }
+    }
+    
+      
+  
+  }
+  
+  .value-section .team2-pics img {
+    max-height: 600px;
+  }
+  
+  // SalesCopy.scss
+  .chooseus{
+    background-color: rgb(196, 212, 196);
+  }
+  
+  .sales-copy-container {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    h1 {
+      color: #007bff;
+    }
+  
+    h2 {
+      color: #28a745;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+    li {
+      margin-bottom: 10px;
+    }
+  
+    strong {
+      color: #dc3545;
+    }
+  }
+   
+
+  .menu {
+    width: 100%;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    font-weight: 400;
+    font-family: "Canva sans", sans-serif;
+    background-color: rgb(249, 249, 249);
+
+    //here is category menu
+    .popup-menu {
+      position: relative;
+      display: inline-flex;
+      padding: 0px 40px;
+
+      .menu-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        font-size: 18px;
+        text-decoration: none;
+        list-style: none;
+
+        .menu-item {
+          position: relative;
+          font-size: 18px;
+          text-decoration: none;
+          margin: 20px;
+
+          &:hover {
+            text-decoration: none;
+
+            .submenu {
+              display: block;
+              text-decoration: none;
+              border-bottom-right-radius: 10px;
+              border-bottom-left-radius: 10px;
+
+            }
+          }
+
+          .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            background-color: rgb(250, 249, 249);
+            text-decoration: none;
+           
+            li {
+              list-style: none;
+              padding: 0;
+              margin: 5px;
+              font-size: 18px;
+              color: green !important;
+              
+              .link {
+                color: #231F20;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 300;
+                padding: 0;
+               
+    
+              }
+            }
+          }
+
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+
+          .menu-link {
+            color: #231F20;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-section {
+      display: flex;
+    flex-direction: column;
+  
+    .about-featured {
+      width: 100%;
+      
+    }
+  
+    .team1-pics {
+      width: 100%;
+  
+      img {
+        width: 100%;  // Make the image fill the container
+        //height: 300px;
+        border-radius: 8px;  // Add some border-radius for styling
+      }
+    }
+  }
+  }
+  
+  
+  
+  .value-section {
+    display: flex;
+    justify-content: space-between;  // Space the children equally
+    align-items: center;  // Align items vertically in the center
+    padding: 20px;
+    margin: 20px auto;
+    gap: 20px;
+  
+    
+    .team2-pics {
+      flex: 1;  // Take up available space
+      position: relative;
+      height: auto;
+  
+      img {
+        width: 100%;  // Make the image fill the container
+        border-radius: 8px;  // Add some border-radius for styling
+        position: relative;
+      }
+     
+    }
+  
+    
+    .value-featured {
+      flex: 1;  // Take up available space
+      max-width: 600px;  // Set a maximum width for the first column
+      padding-right: 20px;  // Add some spacing between the columns
+       
+      .accordion {
+      
+          --bs-accordion-btn-bg:    white;
+          --bs-accordion-active-bg: #198754;
+          --bs-accordion-active-color: white;
+          --bs-accordion-btn-focus-box-shadow: none;
+          
+    }
+   
+    
+     
+      h3 {
+        font-size: 2.5rem;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .value-section {
+      display: flex;
+    flex-direction: column-reverse;
+  
+   
+  
+    .team2-pics {
+      max-width: 100%;
+    }
+    .about-featured {
+      max-width: 100%;
+  
+    }
+  }
+  }
+  

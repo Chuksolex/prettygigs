@@ -1,0 +1,78 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item{
+  color: green;
+}
+
+.nav-link{
+    color: green;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: green;
+}
+.nav-item{
+  font-size: larger;
+ 
+}
+.nav-item .btn{
+  font-size: large;
+
+}
+
+
+
+
+  
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        position: relative;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      
+      .user .link {
+        text-decoration: none;
+        color: green; /* Apply the same color as other nav links */
+        font-weight: 400;
+      }
+      
+      .user img {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .user .options {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 1rem;
+        z-index: 999;
+        border: 0.1rem solid lightgrey;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 20rem;
+        font-weight: 300;
+        color: gray;
+        text-decoration: none;
+      }
+
+
+/*Pretty gigs colors
+Deep green 30C8AA
+Light Green 90E8D7
+Yellow FBB040
+Light Yello FBC067
+Black 231F20
+Purple 8567B8
+Light Purple C6B7DE
+*/

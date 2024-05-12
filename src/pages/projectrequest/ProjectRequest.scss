@@ -1,0 +1,75 @@
+/* styles.css or styles.scss */
+.container{
+    color:#231F20;
+    label{
+        font-size: 1.4rem;
+
+        span{
+            color: red;
+            font-size: 1.4rem;
+        }
+    }
+    input,textarea{
+        font-size: 1.4rem;
+        width: 100%;
+      
+     
+    }
+    .form-control{ background-color: white !important;}
+.custom-input {
+    width: 100%;
+    height: 3rem;
+  
+  }
+  
+  .custom-input-budget1{
+   
+    height: 4rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+    border-bottom-right-radius: 0%;
+    border-top-right-radius: 0%;
+  }
+  .custom-input-budget2{
+  
+    height: 4rem;
+    border-bottom-left-radius: 0%;
+    border-top-left-radius: 0%;
+
+  }
+  .custom-textarea {
+    width: 100%; /* Set the width as needed */
+    height: 150px; /* Set the height as needed */
+    
+ 
+}
+.button{
+    
+  height: 3rem;
+  width: 320px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background-color:  
+  #E36B09;
+  color: white;
+  margin-bottom: 3rem;
+ 
+}
+
+.input-group{
+  width: 320px;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+}
+          /*Pretty gigs colors
+Deep green #30C8AA
+Light Green #90E8D7
+Yellow #FBB040
+Light Yello #FBC067
+Black #231F20
+Purple #8567B8
+Light Purple #C6B7DE
+*/
+
+  
