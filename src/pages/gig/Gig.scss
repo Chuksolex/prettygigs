@@ -54,7 +54,14 @@
                
                 margin-right: 20px;
 
-                img{height: 360px !important; width: auto !important; object-fit: contain;}
+                img{height: 360px !important; width: auto !important; object-fit: cover;
+
+                    @media (max-width: 768px) {
+                        height: 180px !important;
+                        
+                    }
+                
+                }
             }
 
             h2{font-weight: 400;}

@@ -8,7 +8,6 @@ import newRequest from '../../utils/newRequest';
 import Reviews from '../../components/reviews/Reviews';
 import FAQ from '../../components/faq/FAQ';
 import PackageComparisonTable from '../../components/packageComparisom/PackageComparisonTable';
-import Slide from '../../components/slide/Slide';
 import BrowsingHistoryCard from '../../components/browsingHistoryCard/BrowsingHistoryCard';
 import GigCard from '../../components/gigCard/GigCard';
 import Recommendations from '../recommendations/Recommendations';
@@ -270,11 +269,7 @@ function Gig () {
                           
             </div>}
             <div className='background-images container-sm'>
-            {/* <Slide slidesToShow={1} isAuto={true} slidesToScroll={1}> */}
-            {/* {gigAlone.images.map((imag, i) => (
-            <img key={i} src={imag} style={{height: "360px"}}/>
-             ))}
-            </Slide> */}
+           
             <GigSlider  images={gigAlone.images}  />
           </div> 
            
