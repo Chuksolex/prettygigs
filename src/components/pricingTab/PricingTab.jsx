@@ -128,8 +128,8 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
       <div className="FirstTab">
       
           <div className="price">
-            <h3>Basic:</h3>
-            <h2>{currencyCode} {item.price_basic}</h2>
+            <h4>Basic:</h4>
+            <h4>{currencyCode} {item.price_basic}</h4>
         </div>
         
         <p className="p">{item.shortDesc_basic}</p>
@@ -183,8 +183,8 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
       
         {/* Second  tab content will go here */}
         <div className="price">
-            <h3>Standard:</h3>
-            <h2>{currencyCode} {item.price_standard}</h2>
+            <h4>Standard:</h4>
+            <h4>{currencyCode} {item.price_standard}</h4>
         </div>
         <p className="p">{item.shortDesc_standard}</p>
         <div className="details">
@@ -229,8 +229,8 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
       <div className="ThirdTab"> 
 
         <div className="price">
-            <h3>Basic:</h3>
-            <h2>{currencyCode} {item.price_premium}</h2>
+            <h4>Basic:</h4>
+            <h4>{currencyCode} {item.price_premium}</h4>
         </div>
         <p className="p">{item.shortDesc_premium}</p>
         <div className="details">

@@ -15,6 +15,7 @@ import Recommendations from '../recommendations/Recommendations';
 import CreateConversation from '../../components/createConversation/createConversation';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GigSlider from '../../components/slider/GigSlider';
 
 
 const GigOptionsModal = ({ gigId, onDelete, onEdit }) => {
@@ -269,11 +270,12 @@ function Gig () {
                           
             </div>}
             <div className='background-images container-sm'>
-            <Slide slidesToShow={1} isAuto={true} slidesToScroll={1}>
-            {gigAlone.images.map((imag, i) => (
-            <img key={i} src={imag} />
+            {/* <Slide slidesToShow={1} isAuto={true} slidesToScroll={1}> */}
+            {/* {gigAlone.images.map((imag, i) => (
+            <img key={i} src={imag} style={{height: "360px"}}/>
              ))}
-            </Slide>
+            </Slide> */}
+            <GigSlider  images={gigAlone.images}  />
           </div> 
            
             <h2>About This Gig</h2>
