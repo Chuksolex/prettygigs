@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import DiscountModal from '../../components/discountModal/DiscountModal';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from 'react-helmet';
 
 
 
@@ -92,6 +93,10 @@ const Gigs = () => {
     <div className='gigs'>
       <div className="containerr">
         {/* <span className="breadcrumbs"> PHAXNETGIGS › GRAPHICS & DESGIN › </span> */}
+        <Helmet>
+        <title>Gigs</title>
+        <meta name="description" content="Available gigs and services to shop from." />
+      </Helmet>
         <h1 className='gigHeading'>Available Gigs</h1>
         {currentUser?.isSeller &&
           <>

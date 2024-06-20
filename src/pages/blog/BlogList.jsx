@@ -6,6 +6,7 @@ import Sidebar from '../../components/sideBar/sideBar';
 
 import './BlogList.scss';
 import newRequest from '../../utils/newRequest.js';
+import { Helmet } from 'react-helmet';
 
 
 const BlogList = ({recommendedServices}) => {
@@ -65,6 +66,10 @@ const BlogList = ({recommendedServices}) => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>Blog </title>
+        <meta name="description" content="- List of blogs in prettygigs.com.ng ." />
+      </Helmet>
       <h1 className='blogtitle'>Blog Posts</h1>
       <p className="intro">Welcome to the blog page of Prettygis, your go-to destination for well researched and well written articles related to digital services space, gigs, and live tutorials! Whether you're a freelancer, an entrepreneur, a business manager, or simply passionate about the digital world, you've come to the right place to find helpful content...</p>
       <hr className='hor1'/>

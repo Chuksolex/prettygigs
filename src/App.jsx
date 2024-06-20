@@ -40,6 +40,8 @@ import DigitalMarketing from './pages/services/Digital-Marketing.jsx';
 import Message from './pages/message/Message.jsx';
 import Messages from './pages/messages/Messages.jsx';
 import LpSolver from './pages/analysis/OnlineTutorAnalysis.jsx';
+import { Helmet } from 'react-helmet';
+
 
 
 function App() {
@@ -67,6 +69,10 @@ function App() {
       <div className="app">
       
          <Navbar/>
+         <Helmet>
+        <title>Prettygigs.com.NG</title>
+        <meta name="description" content="Providing digital services: web development, data analytics, graphics designs, etc." />
+      </Helmet>
          <Outlet/>
          <Footer/>    
 

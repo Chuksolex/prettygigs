@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 // import {useQuery} from "@tanstack/react-query";
 import { useSelector } from 'react-redux';
 import GigCard from "../../components/gigCard/GigCard";
+import { Helmet } from 'react-helmet';
 
  import "./Home.scss";
 import SimpleSlider from '../../components/slider/HomeSlider';
@@ -142,6 +143,10 @@ const categories = [
   return (
  
     <div className=''>
+      <Helmet>
+        <title>Home - Prettygigs.com.NG</title>
+        <meta name="description" content="Welcome to Prettygigs.com.NG, your one-stop solution for digital services like web development, data analytics, and graphic design." />
+      </Helmet>
        { (active || pathname !=="/") && (
        <>
         <hr />

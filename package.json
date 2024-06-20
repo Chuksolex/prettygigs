@@ -21,6 +21,7 @@
     "react": "^18.2.0",
     "react-datepicker": "^6.6.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-markdown": "^9.0.1",
     "react-phone-input-2": "^2.15.1",
     "react-redux": "^9.1.0",
@@ -41,6 +42,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "sass": "^1.71.1",
-    "vite": "^5.1.4"
+    "vike": "^0.4.177",
+    "vite": "^5.1.4",
+    "vite-plugin-prerender": "^1.0.8",
+    "vite-plugin-ssr": "^0.4.142"
   }
 }
