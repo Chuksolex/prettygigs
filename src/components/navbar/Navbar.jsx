@@ -1,34 +1,31 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import "./Navbar.css";
-import CurrencySwitch from "../currencySwitch/CurrencySwitch";
-import newRequest from "../../utils/newRequest";
-import { useSelector } from 'react-redux';
 
-
+// src/components/Navbar.js
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../reducers/authSlice';
+import newRequest from '../../utils/newRequest';
+import './Navbar.css';
+import CurrencySwitch from '../currencySwitch/CurrencySwitch';
 
 function Navbar() {
-  const navigate = useNavigate();
-
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const dispatch = useDispatch();
+  const { currentUser, isLoggedIn } = useSelector((state) => state.auth);
   const cartCount = useSelector((state) => state.cartSlice.cartCount);
 
   const [open, setOpen] = useState(false);
-  //console.log("cart in cartCount:", cartCount);
 
-
-
-const handleLogout = async () => {
-  try {
-      await newRequest.post("auth/logout");
-      localStorage.setItem("currentUser", null);
+  const handleLogout = async () => {
+    try {
+      await newRequest.post('auth/logout');
+      localStorage.removeItem('currentUser');
+      dispatch(logout());
       window.location.reload();
-  } catch (err) {
-    console.log(err);
-    
-  }
-};
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   
   return (
     <nav className=" navbar navbar-expand-lg navbar-light ">
@@ -134,14 +131,14 @@ const handleLogout = async () => {
 
          {/* User section */}
          <ul className="navbar-nav align-items-center mb-2 mb-lg-0">
-            {currentUser ? (
+            {isLoggedIn ? (
               <li className="nav-item">
                 <div className="user" onClick={() => setOpen(!open)}>
-                  <img src={currentUser.img || "/img/noavatar.jpg"} alt=''/>
-                  <span>{currentUser.userName}</span>
+                  <img src={currentUser?.img || "/img/noavatar.jpg"} alt=''/>
+                  <span>{currentUser?.userName}</span>
                   {open && (
                     <div className="options">
-                      {currentUser.isSeller && (
+                      {currentUser?.isSeller && (
                         <>
                           <Link className="link" to="/mygigs">My Gigs</Link>
                           <Link className='link' to="/Add">Add New Gig</Link>

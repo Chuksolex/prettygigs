@@ -40,11 +40,14 @@
 
                .stars{
                 display: flex; align-items: center; gap: 5px;
+                .yellow{
+                    color:rgb(238, 165, 7);
+                }
 
                 img{display: flex;
                     width: 14px; height: 14px;
                 }
-                span{ font-size: 14px; font-weight: bold; color:#e36b09; };
+                span{ font-size: 14px; font-weight: bold;  };
                }
             }
 
@@ -64,79 +67,8 @@
                 }
             }
 
-            h2{font-weight: 400;}
-            p{font-weight: 300; color:#555;
-            line-height: 25px;}
-
-            .seller{
-                margin-top: 50px; display: flex; flex-direction: column;
-                gap: 20px;
-
-                .user{
-                    gap: 20px; display: flex; align-items: center;    
-                
-                img{
-                    width: 100px; height: 100px; border-radius: 50%;
-                    object-fit: cover;
-                }
-                .info{
-                    display: flex; flex-direction: column; gap: 10px;
-
-                            
-                    .stars {
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-          
-                        img {
-                          height: 14px;
-                          width: 14px;
-                        }
-                    }
-                       
-                          span{ font-size: 14px; font-weight: bold; color:#e36b09;
-                }
-                }
-                button {
-                   
-                    width: auto;
-
-                    
-                  }
             
-                 
-            }
-
-        
-            }
-            .box{
-                border: .5px solid gray;
-                border-radius: 10px; margin-top: 20px; padding: 20px; margin: auto;
-
-                .items{
-                    display: flex; flex-wrap: wrap;
-                    justify-content: space-between;
-
-                    .item{
-                        width: 200px; 
-                        display: flex; flex-direction: column;
-                        gap: 10px; margin-bottom: 20px;
-
-                        .title{
-                            font-weight: 200; color: darkgray;
-                        }
-
-                        .desc{
-                            font-weight: 500; color:#555
-                        }
-                    }
-                }
-                    hr{
-                        height: 0; border: 1px solid lightgray;
-                        margin-bottom: 20px;
-                    }
-                    
-            }
+            
             
         
     }

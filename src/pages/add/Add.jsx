@@ -37,16 +37,16 @@ const Add = () => {
 
   useEffect(() => {
     if (isEdit) {
-      // Fetch gig data based on gigId
-      // const data = useSelector(state => state.gigsSlice.gigs);
-      // const gigAlone = data?.gigs.find(gig => gig._id === gigId);
-      newRequest.get(`/gigs/singlegig/${gigId}`).then((gigAlone) => {
-        console.log("gigAlone at Add:", gigAlone.data.gig);
-        dispatch({ type: "SET_GIG_DATA", payload: gigAlone.data.gig });
+      newRequest.get(`/gigs/singlegig/${gigId}`).then((response) => {
+        const gigData = response.data.gig;
+        console.log("gigAlone at Add:", gigData);
+        dispatch({ type: "SET_GIG_DATA", payload: gigData });
+      }).catch(error => {
+        console.error('Error fetching gig data:', error);
       });
     }
-  }, [isEdit]);
-
+  }, [isEdit, gigId]);
+  
   const [page, setPage] = useState(0);
   const FormTitles = [
     "Info Section",
@@ -212,7 +212,7 @@ const Add = () => {
         console.log("Server response at gig update:", response.status);
         if (response.data && response.status === 200) {
           toast.success("Succesfully updated gig", {
-            position: toast.POSITION.TOP_RIGHT,
+            position: "top-right",
           });
           setTimeout(() => {
             navigate("/gigs");

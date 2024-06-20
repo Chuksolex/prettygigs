@@ -15,21 +15,17 @@ const BrowsingHistoryCard = ({ item }) => {
 
   
   return (
-    <div className='historycard' onClick={handleClick}>
-      {/* <Link to={`/gig/${item._id}`}> */}
-        <img src={item.cover} alt="" />
-        <div className="info">
-          <p>{item.title}</p>
-          {!isNaN(item.totalStars / item.starNumber) && (
-            <div className="stars">
-              {Array(Math.round(item.totalStars / item.starNumber)).fill().map((_, i) => (
-                <img src="/img/star.png" key={i} alt="" />
-              ))}
-              <span>{Math.round(item.totalStars / item.starNumber)}</span>
-            </div>
-          )}
-        </div>
-      {/* </Link> */}
+    <div className="card mb-3"  onClick={() => window.location.href = `/gig/${item._id}`}>
+      <img src={item.cover} className="card-img" alt="" />
+      <div className="card-body text-center">
+        <h5 className="card-title">{item.title}</h5>
+        {!isNaN(item.totalStars / item.starNumber) && (
+          <div className="d-flex justify-content-left align-items-left">
+            <i className="bi bi-star-fill" style={{color: 'orange'}}></i>
+            <span className="ms-1">{Math.round(item.totalStars / item.starNumber)}</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

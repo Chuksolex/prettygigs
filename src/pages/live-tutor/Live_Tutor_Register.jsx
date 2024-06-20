@@ -1,7 +1,10 @@
- import "./Live_Tutor_Register.scss"
+ import { useSelector } from "react-redux";
+import "./Live_Tutor_Register.scss"
  
  
  const Live_Tutor_Register = () => {
+  const selectedCurrency =useSelector((state) => state.currencySlice.selectedCurrency);
+  console.log(`selectedCurrency at Tutor Register: ${selectedCurrency}`);
     return(
         
         <div className="container mt-5">
@@ -34,7 +37,7 @@
               <select className="form-control" value="" name="time" id="exampleFormControlSelect1">
                 <option>--select time--</option>
                 <option> Tuesday: 9am - 1pm</option>
-                <option>Tues: 8pm - 11.45pmpm</option>
+                <option>Tues: 8pm - 11.45pm</option>
                 <option>Saturday: 12pm - 4pm</option>
                 <option>Another time will be better</option>
 

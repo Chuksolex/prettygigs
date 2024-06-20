@@ -45,8 +45,10 @@
 
    
 
-    .rating {
+    .ratingStar {
       margin-bottom: 5px;
+      display: flex;
+      justify-content: center;
 
       .star {
         color: #ff8800;

@@ -50,12 +50,11 @@
   
       .header-sub {
         position: absolute;
-       
+        color: white !important;       
         font-family: fantasy;
         font-size: 2.5rem; // Adjust as needed
-        font-weight: 300;
-        color: black;
-        bottom: 30%;
+        //font-weight: 300;
+        bottom: 32%;
         left: 50%;
         transform: translate(-50%, -50%);
 
@@ -70,6 +69,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 50%;
+        height: 45px;
         margin: 0 auto; 
         button{
             background-color: #fbb040;
@@ -82,8 +82,7 @@
   
     .quotebutton {
       background-color: #fbb040;
-      color: black;
-      font-weight: 700;
+      color: white;
       padding: 0.5rem 1rem;
       border-radius: 0.5rem;
       border: none;
@@ -92,6 +91,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 50%; // Set button width to 50%
+      height: 45px;
     }
   }
   

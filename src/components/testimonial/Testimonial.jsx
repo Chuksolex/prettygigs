@@ -21,7 +21,7 @@ export default function Testimonial(){
             </div>
 
             <div className="testimonialCardDetails">
-            <div className="rating">
+            <div className="ratingStar">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span
                     key={i}

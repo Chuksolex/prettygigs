@@ -3,8 +3,11 @@
 import React, {useState, useEffect} from 'react';
 import './BlogPostDetails.scss';
 import newRequest from '../../utils/newRequest';
+import ReactMarkdown from 'react-markdown';
 import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/sideBar/sideBar';
+import { format } from 'date-fns';
+
 
 
 const BlogPostDetails = ({recommendedServices}) => {
@@ -44,7 +47,7 @@ const BlogPostDetails = ({recommendedServices}) => {
           navigate(`/edit-blog/${blogPost._id}`);
         
         }
-      
+
       
       const handleDelete = async () => {
         try {
@@ -69,11 +72,11 @@ const BlogPostDetails = ({recommendedServices}) => {
         <div className='main-content'>
       <h2 className="blog-post-details__title">{blogPost.title}</h2>
       <p className="blog-post-details__author">Author: {blogPost.author}</p>
-      <p className="blog-post-details__date">Date: {blogPost.date}</p>
+      <p className="blog-post-details__date">Date: {format(new Date(blogPost.date), 'MMMM d, yyyy')}</p>
       <img className="blog-post-details__cover-image" src={blogPost.coverImage} alt="Blog Post Cover" />
       <div className="blog-details__content">
-          {blogPost.content.split('\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+     {blogPost.content.split('\n').map((paragraph, index) => (
+             <p className='contentp' key={index}><ReactMarkdown>{paragraph}</ReactMarkdown></p>
           ))}
         </div>
       {(currentUser?.isSeller ===true) && (

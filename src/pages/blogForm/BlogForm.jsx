@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import './BlogForm.scss';
 import upload from '../../utils/upload.js';
@@ -16,25 +14,22 @@ const BlogForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [blogPostDetails, setBlogPostDetails] = useState(null);
-  const navigate = useNavigate()
-//this useeffect fetches the single post in case you are deleting
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchBlogPostDetails = async () => {
       try {
         const response = await newRequest.get(`/blog/${id}`);
         const blogPostDetails = response.data;
-
-        // Set the initial values of the form inputs using the fetched blog post details
         setBlogPostDetails(blogPostDetails);
       } catch (error) {
         console.error(error);
-        // Handle error
       }
     };
 
     fetchBlogPostDetails();
   }, [id]);
-//this one updates the state of the inputs with the blogposts details fetched for editing
+
   useEffect(() => {
     if (blogPostDetails) {
       setTitle(blogPostDetails.title || '');
@@ -50,6 +45,14 @@ const BlogForm = () => {
       setCoverImage('');
     }
   }, [blogPostDetails]);
+
+  const handleInsertLink = () => {
+    const url = prompt('Enter the URL:');
+    const anchorText = prompt('Enter the anchor text:');
+    if (url && anchorText) {
+      setContent(`${content}\n[${anchorText}](${url})`);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,16 +74,13 @@ const BlogForm = () => {
 
       let response;
       if (blogPostDetails) {
-        // Update existing blog post
         response = await newRequest.put(`/blog/${id}`, data);
       } else {
-        // Create new blog post
         response = await newRequest.post('/blog', data);
       }
 
       setLoading(false);
-      navigate('/blog')
-      // onSubmit(response.data);
+      navigate('/blog');
     } catch (error) {
       console.error(error);
       setError('Failed to save the blog post.');
@@ -128,21 +128,16 @@ const BlogForm = () => {
         </div>
       )}
 
+      <button type="button" onClick={handleInsertLink}>
+        Insert Link
+      </button>
+
       <button type="submit" disabled={loading}>
         {loading ? 'Saving...' : 'Save'}
       </button>
       {error && <div className="error-message">{error}</div>}
     </form>
-    
   );
 };
 
 export default BlogForm;
-
-
-
-
-
-
-
-

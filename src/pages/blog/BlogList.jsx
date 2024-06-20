@@ -83,7 +83,7 @@ const BlogList = ({recommendedServices}) => {
                   />
                   <div className="card-body">
                     <h5 className="card-title">{post.title}</h5>
-                    <p className="card-text">{truncateText(post.content, 70)}</p>
+                   <p className="card-text">  {truncateText(post.content, 70)}</p>
                     {/* /<p className="blog-post__author">Author: {post.author}</p> */}
                     <p className="blog-post__date"><i className="bi bi-calendar3"></i> {new Date (post.date).toDateString("eng-NG", "numeric")}</p>
                   </div>

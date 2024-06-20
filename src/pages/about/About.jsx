@@ -3,14 +3,22 @@ import './About.scss';
 
 const About = () => {
   return (
+    
     <div className="about-container">
-      <h1 className='aboutHeading'>About Us</h1>
 
+      <div className='d-block'>
+      <h1 className='aboutHeading'>About Us</h1>
       <p className='aboutIntro'>
         Welcome to Prettygigs, your trusted partner in delivering digital services with excellence.
         At Prettygigs, we believe in the power of quality services and seamless user experiences.
         Our commitment is to provide a platform where creativity meets reliability, and our users can confidently engage in a world of digital gigs.
       </p>
+
+
+      </div>
+      
+
+      
 
       <div className='left-column'>
         <h2>Our Mission</h2>

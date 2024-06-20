@@ -25,31 +25,29 @@ import Contact from './pages/contact/Contact.jsx';
 import MyCart from './pages/myCart/MyCart.jsx';
 import MyGigs from './pages/myGigs/MyGigs.jsx';
 import Add from './pages/add/Add.jsx';
-import { store } from './store.js';
 import { fetchAndUpdateGigsData, checkAndFetchIfExpired } from './reducers/actions.js';
-import { updateGigsData } from "./reducers/gigsSlice.js";   // Import your action from the gigsSlice
 import { useDispatch, useSelector } from 'react-redux';
 import GigPackage from './pages/gigPackage/GigPackage.jsx';
 import Register from './pages/register/Register.jsx';
 import CheckInbox from './pages/checkInbox/CheckInbox.jsx';
 import Login from './pages/login/Login.jsx';
-
-// import Contact from "./pages/contact/Contact.jsx"
-// import Services from './pages/services/Services.jsx';
-// import ServiceDetail from './pages/services/ServiceDetailPage.jsx';
-// import Portfolio from './pages/portfolio/Portfolio.jsx';
-
-
-
+import Services from './pages/services/Services.jsx';
+import WebDesign from './pages/services/Web-Design.jsx';
+import Advertising from './pages/services/Advertising.jsx';
+import Software from './pages/services/Software.jsx';
+import Illustration from './pages/services/Illustration.jsx';
+import DigitalMarketing from './pages/services/Digital-Marketing.jsx';
+import Message from './pages/message/Message.jsx';
+import Messages from './pages/messages/Messages.jsx';
+import LpSolver from './pages/analysis/OnlineTutorAnalysis.jsx';
 
 
 function App() {
-  const dispatch = useDispatch();
- 
-  const gigsTimestamp = useSelector(state => state.gigsSlice.timestamp );
-  console.log("timestamp at app:",gigsTimestamp);
- 
+  const dispatch = useDispatch(); 
+  const gigsTimestamp = useSelector(state => state.gigsSlice.timestamp ); 
   const selectedCurrency = useSelector(state => state.currencySlice.selectedCurrency); // Replace 'currency' with your actual state slice
+  
+  console.log("timestamp at app:", gigsTimestamp);
   console.log("currency showing at app:", selectedCurrency);
   
  useEffect(() => {
@@ -102,11 +100,25 @@ function App() {
         {path: "/mycart", element: <MyCart />},
         {path: "/mygigs", element: <MyGigs />},
         {path: "/add", element: <Add />},
+        {path: "/add/:id", element: <Add />},
+
         {path: "/gigpackage", element: <GigPackage /> },
         {path: "/register", element: <Register />},
         {path: "/login", element: <Login />},
         {path: "/checkinbox", element: <CheckInbox />},
         {path: "/pay", element: <Pay />},
+        {path: "/services", element: <Services />},
+        {path: "/services/web-design", element: <WebDesign />},
+        {path: "/services/advertising", element: <Advertising />},
+        {path: "/services/software", element: <Software />},
+        {path: "/services/illustration", element: <Illustration />},
+        {path: "/services/digital-marketing", element: <DigitalMarketing />},
+        {path: "/message/:id", element: <Message/>},
+        {path: "/messages", element: <Messages/>},
+        {path: "/analysis/online-tutor", element: <LpSolver />},
+
+
+
           
             
            

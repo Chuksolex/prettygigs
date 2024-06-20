@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./PricingTab.scss";
 import { useNavigate, Link, useLocation } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 //import Pay from "../../pages/pay/Pay";
 import newRequest from "../../utils/newRequest.js";
@@ -22,6 +22,7 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
   const dispatch = useDispatch();
   const sellerId= item.userId;
   const buyerId= currentUser?._id;
+  
 
 
   const handleTab1 = () => {
@@ -78,7 +79,7 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
         localStorage.setItem("wantedGigInfo", JSON.stringify(item));        
   
         toast.info('To send a message you need to log in first! You will be redirected to the login page in 2 secs..', {
-          position: toast.POSITION.TOP_CENTER,
+          position: "top-right",
           autoClose: 3000, // 2 seconds
         });
   

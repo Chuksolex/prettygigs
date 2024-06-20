@@ -2,17 +2,15 @@ import{useEffect, useState} from 'react';
 import { useNavigate, Link} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 // import {useQuery} from "@tanstack/react-query";
+import { useSelector } from 'react-redux';
+import GigCard from "../../components/gigCard/GigCard";
+
  import "./Home.scss";
- //import Featured from '../../components/featured/Featured';
 import SimpleSlider from '../../components/slider/HomeSlider';
 import HomeCategory from '../../components/homeCategory/HomeCategory';
 import AboutMarketPlace from '../../components/aboutMarketPlace/AboutMarketPlace';
 import Testimonial from '../../components/testimonial/Testimonial';
-// //import TrustedBy from '../../components/trustedBy/TrustedBy';
-// //import Slide from '../../components/slide/Slide';
-// import CategoryCard from '../../components/categoryCard/CategoryCard';
-// import  ProjectCard from "../../components/projectCard/ProjectCard";
-// import { cards, projects, books, faqData } from '../../data.js';
+
  import FAQ from '../../components/faq/FAQ';
 // import newRequest from '../../utils/newRequest';
 // import GigCard from '../../components/gigCard/GigCard';
@@ -44,6 +42,24 @@ const Home = () => {
   //     console.log(error)
   //   }
   // };
+
+  const data = useSelector(state => state.gigsSlice.data);
+  console.log("gigs fetched in Home?:", data);
+  const gigsAlone = data?.gigs;
+  console.log("gigalone seen at Home:", gigsAlone);
+
+  const sortedData = [...gigsAlone].sort((a, b) => {
+
+       return (b.sales - a.sales)
+    
+          
+  }); 
+
+  const top12BestSellers = sortedData.slice(0, 12);
+
+
+
+
 
   
 const {pathname} = useLocation();
@@ -164,8 +180,17 @@ const categories = [
 
          <AboutMarketPlace />
          <div>
-           <h3 style={{color: "green"}}>Popular Services (Gigs):</h3>
+           <h3 style={{color: "green"}}>Popular Services (Best Selling Gigs):</h3>
          </div>
+         <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
+            {top12BestSellers.map((gigg) => (
+              <div className="col" key={gigg._id}>
+                <GigCard currencyCode={data.currencyCode} item={gigg} />
+              </div>
+            ))}
+         
+
+        </div>
 
          <div>
            <h3 style={{color: "green"}}>What Our Clients Are Saying:</h3>

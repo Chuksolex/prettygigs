@@ -186,13 +186,13 @@ const goToCheckout = () => {
                     
                     <div ></div>
 
-                    <div className="mt-2">
+                    <div className="mt-2 ">
                         <h3 className="fw-500">Addons</h3>
                     </div>
                     {selectedGig.addons.map((addon, index)=> (
 
                 
-                    <div key={addon.index} className="row border res-m0 mt-5 mb-3 pb-5 pt-5 lh-2">
+                    <div key={addon.index} className="row border res-m0 mt-5 mb-3 pb-5 pt-5 lh-2 text-md-left ">
                         <div className="col-md-1 col-sm-1 col-1">
                             <label className="containerr">
                                 <input type="checkbox" className="checkbox1" onClick={() => handleAddonSelection(index)} />
@@ -221,8 +221,8 @@ const goToCheckout = () => {
 
                 {/* RIGHT SIDE or Display-Price*/}           
 
-                <div className="col-md-4 fl-lft mb-4 mt-4 chk-sty mx-wdt div-col-md-4 res-ml-15 ">
-                    <div className="row m0 border pb-3 mt-3 lh-6 mb-4">
+                <div className="col-md-4 fl-lft mb-4 mt-4 chk-sty mx-wdt div-col-md-4 res-ml-15">
+                    <div className="row m0 border pb-3 mt-3 lh-6 mb-4 bg-warning">
                         <div className="col-12 col-md-12 m_top1 chk-bor b-r-5">
                             <h3 className="mt-1 fw-500 fs-2">Summary </h3>
                             <div className="row m0">

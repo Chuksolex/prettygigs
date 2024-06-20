@@ -13,7 +13,7 @@ const gigsSlice = createSlice({
     
     updateGigsData: (state, action) => {
       console.log(action.payload, 'payload')
-        state.data = action.payload; // Update the gigs array in the state
+        state.data = action.payload.gigs; // Update the gigs array in the state
         state.timestamp = Date.now(); // Update the timestamp
       },
      

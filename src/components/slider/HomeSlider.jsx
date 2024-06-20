@@ -58,7 +58,7 @@ export default function SimpleSlider() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={handleSearch}>
+      <button className="btn btn-outline-light" type="button" id="button-addon2" onClick={handleSearch}>
         Search
       </button>
     </div>
@@ -84,7 +84,7 @@ export default function SimpleSlider() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={handleSearch}>
+      <button className="btn btn-outline-light" type="button" id="button-addon2" onClick={handleSearch}>
         Search
       </button>
     </div>
@@ -111,7 +111,7 @@ export default function SimpleSlider() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={handleSearch}>
+      <button className="btn btn-outline-light" type="button" id="button-addon2" onClick={handleSearch}>
         Search
       </button>
     </div>

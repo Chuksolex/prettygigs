@@ -12,7 +12,7 @@ import BrowsingHistoryCard from '../../components/browsingHistoryCard/BrowsingHi
 import GigCard from '../../components/gigCard/GigCard';
 import Recommendations from '../recommendations/Recommendations';
 import CreateConversation from '../../components/createConversation/createConversation';
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GigSlider from '../../components/slider/GigSlider';
 
@@ -56,7 +56,7 @@ function Gig () {
   // });
 
  
-  const  data  =useSelector(state => state.gigsSlice.data.data);
+  const data = useSelector(state => state.gigsSlice?.data);
 
   console.log("data at gig:" , data);
   const gigAlone =  data?.gigs.find(gig => gig._id === gigId);// data.gigs.gigs?.find(gig => gig._id === gigId);
@@ -65,7 +65,7 @@ function Gig () {
 
     // const userId = data?.gig.userId; // this is owner of the gig;
     const userId = gigAlone.userId;
-     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+     const currentUser = useSelector((state) => state.auth.currentUser);
  
      
     
@@ -248,18 +248,20 @@ function Gig () {
             {isLoadingUser? "Loading.." : 
               errorUser? "Something went wrong!" :
              <div className="user">
+              
            
              <img
               className="pp"
-              src={dataUser.img}
+              src={dataUser?.img}
               alt=""
              />
               <span>{dataUser.username}</span>
               {!isNaN(gigAlone.totalStars / gigAlone.starNumber) && (
                  <div className="stars">
                    {Array(Math.round(gigAlone.totalStars / gigAlone.starNumber)).fill().map((item, i) =>(
-                                    <img src="/img/star.png" key={i} alt="" />
-
+                                    // <img src="/img/star.png" key={i} alt="" />
+                                    <i className="bi bi-star-fill yellow" key={i} />
+ 
                    ))}
                 
                    <span>{Math.round(gigAlone.totalStars / gigAlone.starNumber)}</span>
@@ -276,71 +278,6 @@ function Gig () {
             <h2>About This Gig</h2>
             <p>  {gigAlone.desc}    </p>
 
-            {isLoadingUser? "Loading.." : 
-              errorUser? "Something went wrong!" :
-            <div className="seller">
-               <h2>About The Seller</h2>
-              
-              <div className="user">
-               <img
-                src={dataUser.img || "/img/noavatar.jpg"}
-                alt=""
-                />
-                <div className="info">
-                  <span>{dataUser.username}</span>
-                  {!isNaN(gigAlone?.totalStars / gigAlone?.starNumber) && (
-                 <div className="stars">
-                   {Array(Math.round(gigAlone.totalStars / gigAlone.starNumber)).fill().map((item, i) =>(
-                                    <img src="/img/star.png" key={i} alt="" />
-
-                   ))}
-                
-                   <span>{Math.round(gigAlone.totalStars / gigAlone.starNumber)}</span>
-
-                 </div> )}
-                 <button className='btn btn-primary' onClick={() => handleContact()}>Contact Seller</button>
-                  {showCreateConversationModal && (
-                                    <CreateConversation 
-                                        onConversationCreated={handleConversationCreated} 
-                      existingConversationId={existingConversationId} />
-                  )}
-                
-                   
-                </div>
-                
-               
-              
-              </div>
-              <div className="box">
-            <div className="items">
-              <div className="item">
-                <span className="title">From</span>
-                <span className="desc">{dataUser.country}</span>
-
-              </div>
-              <div className="item">
-                  <span className="title">Member since</span>
-                  <span className="desc">Aug 2022</span>
-                </div>
-                <div className="item">
-                  <span className="title">Avg. response time</span>
-                  <span className="desc">4 hours</span>
-                </div>
-                <div className="item">
-                  <span className="title">Last delivery</span>
-                  <span className="desc">1 day</span>
-                </div>
-                <div className="item">
-                  <span className="title">Languages</span>
-                  <span className="desc">English</span>
-                </div>
-
-            </div>
-            <hr />
-            <p> {dataUser.desc}</p>
-          </div>
-
-            </div>}
 
           
 
@@ -378,14 +315,14 @@ function Gig () {
        </div>
          
           
-          <div  className='recommended-services' > 
-          <h2 className='sub-head'>Recommended Services</h2>
+          <div  className='' > 
+          <h2 className='sub-head mb-4 text-align-left' style={{textAlign: "left"}}>Recommended Services</h2>
 
-          <div className='popular'>
+          <div className='popular row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
             {popularGigs.map((gig) => (
-             
+             <div key={gig._id} className='col'>
               <GigCard  currencyCode={currencyCode} key={gig._id} item={gig} />
-             
+             </div>
             ))}
          </div>
          </div>
@@ -393,22 +330,22 @@ function Gig () {
        
        
 
-        <div className='browsing-history '>
-          <h2 className='sub-head'>Your Browsing History</h2>
-          <div  className='history' >
-
-          {browsingHistory.map((gighistory) => (
-                 <GigCard  item={gighistory}  key={gighistory._id}/>
-          )
-          )}
-       
-       </div>
-        </div>  
+         <div className='mb-4'>
+        <h2 className='mb-4' style={{textAlign: "left"}}>Your Browsing History</h2>
+        <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
+          {browsingHistory.map((item) => (
+            <div className="col" key={item._id}>
+              <BrowsingHistoryCard item={item} key={item._id}/>
+            </div>
+          ))}
+        </div>
+      </div> 
 
      
-          <Reviews gigId={gigId} />
+          {/*let this come after the person has successfully completed his order and accepted
+           <Reviews gigId={gigId} /> */}
       
-       
+      
 
        
         

@@ -15,7 +15,9 @@ const HomeCategory = () => {
       <div className="row">
         {homeCategoryData.map(gig => (
           <div key={gig.id} className="col-md-3 mb-4">
-            <Link to={`/gigs/${gig.id}`} style={{ textDecoration: 'none' }}>
+            {/* <Link to={`/gigs/${gig.id}`} style={{ textDecoration: 'none' }}> */}
+            <Link to={`/services/${gig.id}`} style={{ textDecoration: 'none' }}>
+
               <div className="card">
                 <img
                   src={gig.imgSrc}

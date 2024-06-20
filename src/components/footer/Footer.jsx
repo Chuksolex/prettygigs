@@ -12,48 +12,58 @@ return (
       <div className="col-6 col-md-2 mb-3">
         <h5>Company</h5>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home: Prettygigs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">Contact</a></li>
           <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
           <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
+          <li className="nav-item mb-2"><a href="/about" className="nav-link p-0 text-muted">About</a></li>
         </ul>
       </div>
 
       <div className="col-6 col-md-2 mb-3">
         <h5>Services</h5>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
+          <li className="nav-item mb-2"><a href="/live-tutor" className="nav-link p-0 text-muted">Coding-Tutorials</a></li>
+          <li className="nav-item mb-2"><a href="/gigs" className="nav-link p-0 text-muted">General Gigs or Services</a></li>
+          <li className="nav-item mb-2"><a href="/#software" className="nav-link p-0 text-muted">Software Development</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Graphic Design</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Data Analysis</a></li>
         </ul>
       </div>
 
       <div className="col-6 col-md-2 mb-3">
         <h5>Legal</h5>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Home</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Privacy Policy</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Terms and Conditions</a></li>
           <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">About</a></li>
+          
+          
         </ul>
       </div>
 
       <div className="col-md-5 offset-md-1 mb-3">
-      <form>
-        <h5>Subscribe to our newsletter</h5>
-        <p>Monthly digest of what's new and exciting from us.</p>
-        <div className="d-flex flex-column flex-sm-row w-100 gap-2 align-items-center">
-          <label htmlFor="newsletter1" className="visually-hidden">Email address</label>
-          <input id="newsletter1" type="text" className="form-control" placeholder="Email address" style={{ height: '3rem' }} />
-          <button className="btn btn-primary" type="button" style={{ height: '3rem' }}>Subscribe</button>
+      <div className="row justify-content-center">
+      <div className="col-md-10">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title text-center">Subscribe to our Newsletter</h5>
+            <form>
+              <div className="form-group">
+                
+                <input type="email" className="form-control" id="email" placeholder="Your Email" required />
+              </div>
+              <div className="form-group">
+               
+                <input type="text" className="form-control" id="name" placeholder="Your name" required />
+              </div>
+              <button type="submit" className="btn btn-primary btn-block ">Subscribe</button>
+            </form>
+          </div>
         </div>
-      </form>
-
       </div>
+      </div>
+    </div>
     </div>
 
     <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top footerlast">

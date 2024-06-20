@@ -4,11 +4,11 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Message.scss";
+import { useSelector } from "react-redux";
 
 const Message = () => {
   const { id } = useParams();
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  console.log("currentUser at message:",currentUser);
+  const currentUser = useSelector((state) => state.auth.currentUser);
   const queryClient = useQueryClient();
   const [userImages, setUserImages] = useState({});
   const [isTyping, setIsTyping] = useState(false);

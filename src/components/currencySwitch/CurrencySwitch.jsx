@@ -1,16 +1,26 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { updateCurrency } from '../../reducers/currencySlice';
-import newRequest from '../../utils/newRequest';
+//import newRequest from '../../utils/newRequest';
+import { fetchAndUpdateGigsData } from '../../reducers/actions';
 import './CurrencySwitch.css'; // Import the SCSS file
 
 const CurrencySwitch = () => {
   const dispatch = useDispatch();
+  //const [selectedCurrency, setSelectedCurrency] = useState('');
+  const selectedCurrency = useSelector((state) => state.currencySlice.selectedCurrency);
 
   const handleCurrencyChange = async (currency) => {
     try {
       console.log('Dispatching updateCurrency with:', currency);
-      await newRequest.post('/currency', { currency });
       dispatch(updateCurrency(currency));
+      dispatch(fetchAndUpdateGigsData(currency));
+     
+        // Fetch data when selected currency changes
+        //dispatch(fetchAndUpdateGigsData());
+      
+    
+    
+    
     } catch (error) {
       console.error('Error updating currency:', error);
     }
@@ -19,7 +29,7 @@ const CurrencySwitch = () => {
   return (
     <div className="dropdown">
       <button className="btn dropdown-toggle btntext" type="button" id="currencyDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-        Currency
+        {selectedCurrency}
       </button>
       <ul className="dropdown-menu btntext" aria-labelledby="currencyDropdown">
         <li><button className="dropdown btntext" type="button" onClick={() => handleCurrencyChange('USD')}>USD</button></li>

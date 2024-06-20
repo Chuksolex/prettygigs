@@ -1,42 +1,4 @@
-// .about-container {
-//   max-width: 800px;
-//   margin: 0 auto;
-//   padding: 20px;
-//   font-family: 'Arial', sans-serif;
 
-//   h1 {
-//     font-size: 32px;
-//     margin-bottom: 20px;
-//     color: #231F20;
-//   }
-
-//   h2 {
-//     font-size: 24px;
-//     margin-top: 20px;
-//     color: #8567B8;
-//   }
-
-//   p {
-//     font-size: 16px;
-//     line-height: 1.5;
-//     color: #231F20;
-
-//     strong {
-//       font-weight: bold;
-//       font-size: 16px;
-//     }
-
-//     a {
-//       color: #8567B8;
-//       text-decoration: none;
-//       font-size: 16px;
-
-//       &:hover {
-//         text-decoration: underline;
-//       }
-//     }
-//   }
-// }
 
       /*Pretty gigs colors
 Deep green #30C8AA
@@ -55,7 +17,17 @@ Light Purple #C6B7DE
   justify-content: space-between;
   padding: 20px;
   flex-wrap: wrap;
+  
 
+
+
+
+  h1, h2, h3 {
+    color: green
+  }
+  .aboutHeading{
+    text-align: left;
+  }
   .aboutIntro{   
     text-align: justify;
   }
@@ -63,14 +35,17 @@ Light Purple #C6B7DE
   .left-column {
     width: 45%;
     text-align: left;
-    background-color: #8567bb;
+    //background-color: #8567bb;
+    //background-color: #c6b7de;
+   // background-color: #fbc067;
+    background-color: #fbb040;
     //background-image: url('./public/img/finegirl.jpg');
     background-size: cover; 
    background-position: center; /* Centers the background image */
    
      padding: 20px;
      border-radius: 20px;
-     color: white;
+     color: black;
      margin-bottom: 20px;
  
   }

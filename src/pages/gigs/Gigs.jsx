@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 const Gigs = () => {
-  const data = useSelector(state => state.gigsSlice.data.data);
+  const data = useSelector(state => state.gigsSlice.data);
   const [filteredSearch, setFilteredSearch] = useState(undefined);
   console.log("data frm gig:", data);
   const gigsAlone = data?.gigs;
@@ -29,7 +29,6 @@ const Gigs = () => {
   const [max, setMax] = useState(10000);
   const minRef = useRef();
   const maxRef = useRef();
-  const [gigData, setGigData] = useState([]);
   const [catFilter, setCatFilter] = useState(initialCategoryFilter); //category is cat
   const [discountModalIsOpen, setDiscountModalIsOpen] = useState(false);
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
