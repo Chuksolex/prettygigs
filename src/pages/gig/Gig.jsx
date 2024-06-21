@@ -59,12 +59,12 @@ function Gig () {
   const data = useSelector(state => state.gigsSlice?.data);
 
   console.log("data at gig:" , data);
-  const gigAlone =  data?.gigs.find(gig => gig._id === gigId);// data.gigs.gigs?.find(gig => gig._id === gigId);
+  const gigAlone =  Array(data?.gigs).find(gig => gig?._id === gigId);// data.gigs.gigs?.find(gig => gig._id === gigId);
   const currencyInfo= data?.currencyCode;
     console.log("gigAlone:", gigAlone);    
 
     // const userId = data?.gig.userId; // this is owner of the gig;
-    const userId = gigAlone.userId;
+    const userId = gigAlone?.userId;
      const currentUser = useSelector((state) => state.auth.currentUser);
  
      
@@ -231,8 +231,8 @@ function Gig () {
         <div className='upperSide'>
         <div className="left">
           
-            <span className='breadcrumbs'>Phaxnetgigs › {gigAlone.cat} ›</span>
-            {( gigAlone.userId === currentUser?._id) &&   <svg onClick={() => setShowModal(!showModal)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#e36b09" class="bi bi bi-gear" viewBox="0 0 16 16">
+            <span className='breadcrumbs'>Phaxnetgigs › {gigAlone?.cat} ›</span>
+            {( gigAlone?.userId === currentUser?._id) &&   <svg onClick={() => setShowModal(!showModal)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#e36b09" class="bi bi bi-gear" viewBox="0 0 16 16">
               <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
               <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
             </svg>}
@@ -242,7 +242,7 @@ function Gig () {
              )}
           
 
-            <h1 className='title'> {gigAlone.title}</h1>
+            <h1 className='title'> {gigAlone?.title}</h1>
             
 
             {isLoadingUser? "Loading.." : 
@@ -255,16 +255,16 @@ function Gig () {
               src={dataUser?.img}
               alt=""
              />
-              <span>{dataUser.username}</span>
-              {!isNaN(gigAlone.totalStars / gigAlone.starNumber) && (
+              <span>{dataUser?.username}</span>
+              {!isNaN(gigAlone?.totalStars / gigAlone?.starNumber) && (
                  <div className="stars">
-                   {Array(Math.round(gigAlone.totalStars / gigAlone.starNumber)).fill().map((item, i) =>(
+                   {Array(Math.round(gigAlone?.totalStars / gigAlone?.starNumber)).fill().map((item, i) =>(
                                     // <img src="/img/star.png" key={i} alt="" />
                                     <i className="bi bi-star-fill yellow" key={i} />
  
                    ))}
                 
-                   <span>{Math.round(gigAlone.totalStars / gigAlone.starNumber)}</span>
+                   <span>{Math.round(gigAlone?.totalStars / gigAlone?.starNumber)}</span>
 
                  </div>
                  )}
@@ -272,11 +272,11 @@ function Gig () {
             </div>}
             <div className='background-images container-sm'>
            
-            <GigSlider  images={gigAlone.images}  />
+            <GigSlider  images={gigAlone?.images}  />
           </div> 
            
             <h2>About This Gig</h2>
-            <p>  {gigAlone.desc}    </p>
+            <p>  {gigAlone?.desc}    </p>
 
 
           
@@ -289,7 +289,7 @@ function Gig () {
         
         <div className="right">
           <div className='pricingTab'>
-              <PricingTab currencyCode={currencyInfo} key={gigAlone.gigId} item={gigAlone} currentUser={currentUser}/>
+              <PricingTab currencyCode={currencyInfo} key={gigAlone?.gigId} item={gigAlone} currentUser={currentUser}/>
 
           </div>
          
@@ -297,7 +297,7 @@ function Gig () {
             <div className='comparePackage'>
               <h3>Compare Package</h3>
 
-              <PackageComparisonTable currencyCode={currencyInfo} key={gigAlone._id} item={gigAlone} />
+              <PackageComparisonTable currencyCode={currencyInfo} key={gigAlone?._id} item={gigAlone} />
 
             </div>
 
@@ -310,7 +310,7 @@ function Gig () {
           <h2 className='sub-head'>Frequently Asked Questions FAQs</h2>
 
        <div className='faq'>
-          <FAQ faqData={gigAlone.faqs} />
+          <FAQ faqData={gigAlone?.faqs} />
         </div>
        </div>
          
@@ -320,8 +320,8 @@ function Gig () {
 
           <div className='popular row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
             {popularGigs.map((gig) => (
-             <div key={gig._id} className='col'>
-              <GigCard  currencyCode={currencyCode} key={gig._id} item={gig} />
+             <div key={gig?._id} className='col'>
+              <GigCard  currencyCode={currencyCode} key={gig?._id} item={gig} />
              </div>
             ))}
          </div>

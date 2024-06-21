@@ -24,13 +24,13 @@ const PackageComparisonTable = ({ item, currencyCode }) => {
           </tr>
           <tr>
             <th></th>
-            <th>{currencyCode} {item.price_basic}</th>
-            <th>{currencyCode} {item.price_standard}</th>
-            <th>{currencyCode} {item.price_premium}</th>
+            <th>{currencyCode} {item?.price_basic}</th>
+            <th>{currencyCode} {item?.price_standard}</th>
+            <th>{currencyCode} {item?.price_premium}</th>
           </tr>
         </thead>
         <tbody>
-          {item.features_basic.map((feature, index) => (
+          {item?.features_basic.map((feature, index) => (
             <tr key={index}>
               <td>{feature}</td>
               {packageTitles.map((title) => (
@@ -38,7 +38,7 @@ const PackageComparisonTable = ({ item, currencyCode }) => {
               ))}
             </tr>
           ))}
-          {item.features_standard.map((feature, index) => (
+          {item?.features_standard.map((feature, index) => (
             <tr key={index}>
               <td>{feature}</td>
               {packageTitles.map((title) => (
@@ -46,7 +46,7 @@ const PackageComparisonTable = ({ item, currencyCode }) => {
               ))}
             </tr>
           ))}
-          {item.features_premium.map((feature, index) => (
+          {item?.features_premium.map((feature, index) => (
             <tr key={index}>
               <td>{feature}</td>
               {packageTitles.map((title) => (
@@ -56,9 +56,9 @@ const PackageComparisonTable = ({ item, currencyCode }) => {
           ))}
 
           <tr>            <th>Total Price</th>
-            <td>{currencyCode} {item.price_basic}</td>
-            <td>{currencyCode} {item.price_standard}</td>
-            <td>{currencyCode} {item.price_premium}</td>
+            <td>{currencyCode} {item?.price_basic}</td>
+            <td>{currencyCode} {item?.price_standard}</td>
+            <td>{currencyCode} {item?.price_premium}</td>
 
           </tr>
         </tbody>

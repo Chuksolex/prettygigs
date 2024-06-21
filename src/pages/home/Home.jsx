@@ -46,7 +46,7 @@ const Home = () => {
 
   const data = useSelector(state => state.gigsSlice.data);
   console.log("gigs fetched in Home?:", data);
-  const gigsAlone = data?.gigs;
+  const gigsAlone = Array(data?.gigs);
   console.log("gigalone seen at Home:", gigsAlone);
 
   const sortedData = [...gigsAlone].sort((a, b) => {
@@ -189,8 +189,8 @@ const categories = [
          </div>
          <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
             {top12BestSellers.map((gigg) => (
-              <div className="col" key={gigg._id}>
-                <GigCard currencyCode={data.currencyCode} item={gigg} />
+              <div className="col" key={gigg?._id}>
+                <GigCard currencyCode={data?.currencyCode} item={gigg} />
               </div>
             ))}
          

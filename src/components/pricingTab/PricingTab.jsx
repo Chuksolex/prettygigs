@@ -11,64 +11,64 @@ import { setSelectedGig } from "../../reducers/orderSlice";
 
 const PricingTab = ({ item, currencyCode, currentUser }) => {
   const [activeTab, setActiveTab] = useState("tab1");
-  const [priceOption, setPriceOption] = useState(item.price_basic);
-  const [orderDetail, setOrderDetail] = useState(item.features_basic);
-  const [shortDesc, setShortDesc] = useState(item.shortDesc_basic);
+  const [priceOption, setPriceOption] = useState(item?.price_basic);
+  const [orderDetail, setOrderDetail] = useState(item?.features_basic);
+  const [shortDesc, setShortDesc] = useState(item?.shortDesc_basic);
   const [gigPackage, setGigPackage]= useState("Basic Package");
   //const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const sellerId= item.userId;
+  const sellerId= item?.userId;
   const buyerId= currentUser?._id;
   
 
 
   const handleTab1 = () => {
     setActiveTab("tab1");
-    setPriceOption(item.price_basic);
-    setOrderDetail(item.features_basic);
+    setPriceOption(item?.price_basic);
+    setOrderDetail(item?.features_basic);
     setPackage("Basic Package");
-    setShortDesc(item.shortDesc_basic)
+    setShortDesc(item?.shortDesc_basic)
   };
 
   const handleTab2 = () => {
     setActiveTab("tab2");
-    setPriceOption(item.price_standard);
-    setOrderDetail(item.features_standard);
+    setPriceOption(item?.price_standard);
+    setOrderDetail(item?.features_standard);
     setPackage("Standard Package");
-    setShortDesc(item.shortDesc_standard)
+    setShortDesc(item?.shortDesc_standard)
   };
 
   const handleTab3 = () => {
     setActiveTab("tab3");
-    setPriceOption(item.price_premium);
-    setOrderDetail(item.features_premium);
+    setPriceOption(item?.price_premium);
+    setOrderDetail(item?.features_premium);
     setPackage("Premium Package");
-    setShortDesc(item.shortDesc_premium)
+    setShortDesc(item?.shortDesc_premium)
   };
   
     const handleProceed = (e) => {
       e.preventDefault();
       const order = {
-        gigId: item._id,
-        gigTitle: item.title,
+        gigId: item?._id,
+        gigTitle: item?.title,
         gigPackage,
         currencyCode,
-        cover: item.cover,
+        cover: item?.cover,
         shortDesc: shortDesc,        
         amount: priceOption,
         orderDetails: orderDetail,
-        sellerEmail: item.email,
-        sellerphone: item.phone,
-        totalStarts: item.totalStars,
-        starNumber: item.startNumber,
-        discountValidThrough: item.discountValidThrough,
-        discountStartDate: item.discountStartDate,
-        discountOffer: item.discountOffer,
-        discountType: item.discountType,
-        addons:item.addons
+        sellerEmail: item?.email,
+        sellerphone: item?.phone,
+        totalStarts: item?.totalStars,
+        starNumber: item?.startNumber,
+        discountValidThrough: item?.discountValidThrough,
+        discountStartDate: item?.discountStartDate,
+        discountOffer: item?.discountOffer,
+        discountType: item?.discountType,
+        addons:item?.addons
       };
       dispatch(setSelectedGig(order));
       navigate("/gigpackage")
@@ -97,9 +97,9 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
           const response = await newRequest.post("/conversations", {
             to: sellerId,
                          
-            fromEmail: currentUser.email,
+            fromEmail: currentUser?.email,
           }); 
-          const newConversationId = await response.data._id; // Assuming your response contains the new conversation's ID
+          const newConversationId = await response.data?._id; // Assuming your response contains the new conversation's ID
     
           // Redirect the user to the new conversation page
           navigate(`/message/${newConversationId}`);
@@ -124,29 +124,29 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
 
 
   const FirstTab = () => {
-    const orderDetails = JSON.stringify(item.features_basic);
+    const orderDetails = JSON.stringify(item?.features_basic);
     return (
       <div className="FirstTab">
       
           <div className="price">
             <h4>Basic:</h4>
-            <h4>{currencyCode} {item.price_basic}</h4>
+            <h4>{currencyCode} {item?.price_basic}</h4>
         </div>
         
-        <p className="p">{item.shortDesc_basic}</p>
+        <p className="p">{item?.shortDesc_basic}</p>
         <div className="details">
             <div className="item">
                 <img src="/img/clock.png" alt="" />
-                <span>{item.deliveryTime_basic} Hours.</span>
+                <span>{item?.deliveryTime_basic} Hours.</span>
             </div>
             <div className="item">
                 <img src="/img/recycle.png" alt="" />
-                <span>{item.revisionNumber_basic} Revisions</span>
+                <span>{item?.revisionNumber_basic} Revisions</span>
             </div>
 
         </div>
         <div className="features">
-          {item.features_basic.map((feature_basic) =>(
+          {item?.features_basic.map((feature_basic) =>(
          
            <div className="item" key={feature_basic}>
               <img src="/img/greencheck.png" alt="" />
@@ -200,7 +200,7 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
 
         </div>
         <div className="features">
-          {item.features_standard.map((feature_standard) =>(
+          {item?.features_standard.map((feature_standard) =>(
          
            <div className="item" key={feature_standard}>
               <img src="/img/greencheck.png" alt="" />
@@ -246,7 +246,7 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
 
         </div>
         <div className="features">
-          {item.features_premium.map((feature_premium) =>(
+          {item?.features_premium.map((feature_premium) =>(
          
            <div className="item" key={feature_premium}>
               <img src="/img/greencheck.png" alt="" />

@@ -22,7 +22,7 @@ const Services = () => {
 
   const data = useSelector(state => state.gigsSlice.data);
   console.log("gigs fetched in Home?:", data);
-  const gigsAlone = data?.gigs;
+  const gigsAlone = Array(data?.gigs);
   console.log("gigalone seen at Home:", gigsAlone);
 
   const sortedData = [...gigsAlone].sort((a, b) => {

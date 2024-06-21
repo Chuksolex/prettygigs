@@ -16,7 +16,7 @@ const Gigs = () => {
   const data = useSelector(state => state.gigsSlice.data);
   const [filteredSearch, setFilteredSearch] = useState(undefined);
   console.log("data frm gig:", data);
-  const gigsAlone = data?.gigs;
+  const gigsAlone = Array(data?.gigs);
   console.log("gigalone:", gigsAlone);
 
   const location = useLocation();
@@ -53,11 +53,11 @@ const Gigs = () => {
     setMax(value);
   };
 
-  const filteredData = gigsAlone.filter((gig) => {
-    const gigTitle = gig.title.toLowerCase();
-    const priceCondition = !isNaN(gig.price_basic) >= (min) && !isNaN(gig.price_basic) <= (max);
+  const filteredData = gigsAlone?.filter((gig) => {
+    const gigTitle = gig?.title.toLowerCase();
+    const priceCondition = !isNaN(gig?.price_basic) >= (min) && !isNaN(gig?.price_basic) <= (max);
     const searchTermCondition = !searchTerm || gigTitle.includes(searchTerm.toLowerCase());
-    const categoryCondition = !catFilter || gig.cat.toLowerCase() === catFilter.toLowerCase();
+    const categoryCondition = !catFilter || gig?.cat.toLowerCase() === catFilter.toLowerCase();
 
     return priceCondition && searchTermCondition && categoryCondition;
   });
@@ -178,8 +178,8 @@ const Gigs = () => {
 
         <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
             {sortedData.map((gigg) => (
-              <div className="col" key={gigg._id}>
-                <GigCard currencyCode={data.currencyCode} item={gigg} />
+              <div className="col" key={gigg?._id}>
+                <GigCard currencyCode={data?.currencyCode} item={gigg} />
               </div>
             ))}
          

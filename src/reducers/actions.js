@@ -13,7 +13,7 @@ export const fetchAndUpdateGigsData = (selectedCurrency) => async (dispatch, get
 
   try {
     const response = await newRequest.get(`/gigs?currency=${currency}`);
-    const gigs = response.data;
+    const gigs = response?.data;
     console.log('Response at fetchAndUpdateGigsData:', gigs);
 
     

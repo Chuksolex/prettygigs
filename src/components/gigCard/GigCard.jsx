@@ -117,9 +117,9 @@ import newRequest from '../../utils/newRequest';
 const GigCard = ({item, currencyCode}) => {
 
     const { isLoading, error, data} = useQuery({
-        queryKey: [item.userId],
+        queryKey: [item?.userId],
         queryFn: () =>
-          newRequest.get(`/users/${item.userId}`)
+          newRequest.get(`/users/${item?.userId}`)
           .then(
             (res) => {
             return res.data;
@@ -137,7 +137,7 @@ const GigCard = ({item, currencyCode}) => {
       if (storedHistory) parsedHistory = JSON.parse(storedHistory);
     
       // Check if the gig already exists in the browsing history
-      const gigExists = parsedHistory.some((gig) => gig._id === item._id);
+      const gigExists = parsedHistory.some((gig) => gig._id === item?._id);
     
       // If the gig doesn't exist, add it to the browsing history
       if (!gigExists) {
@@ -148,7 +148,7 @@ const GigCard = ({item, currencyCode}) => {
       }
     
       // Navigate to the gig page
-      navigate(`/gig/${item._id}`);
+      navigate(`/gig/${item?._id}`);
     };
 
 
@@ -156,26 +156,26 @@ const GigCard = ({item, currencyCode}) => {
 
   return (
     <div className="card ">
-    <Link to={`/gig/${item._id}`} onClick={handleClick}>
-      <img src={item.cover} className="card-img" alt="gig cover image" />
-      {item.discountType !== "None" && item.discountOffer > 0 && item.discountValidThrough && new Date(item.discountValidThrough) >= new Date() && (
+    <Link to={`/gig/${item?._id}`} onClick={handleClick}>
+      <img src={item?.cover} className="card-img" alt="gig cover image" />
+      {item?.discountType !== "None" && item?.discountOffer > 0 && item.discountValidThrough && new Date(item?.discountValidThrough) >= new Date() && (
         <div className="promo-badge">
-          <span className="promo-badge-text1">{item.discountType}:</span>
-          <span className="promo-badge-text2"> - {item.discountOffer}%</span>
+          <span className="promo-badge-text1">{item?.discountType}:</span>
+          <span className="promo-badge-text2"> - {item?.discountOffer}%</span>
         </div>
       )}
       <div className="card-body">
-        <h5 className="card-title text-left">{item.title}</h5>
+        <h5 className="card-title text-left">{item?.title}</h5>
         <div className="user"></div>
         <div className="star">
         <i className="bi bi-star-fill"></i>
-          <span>{!isNaN(item.totalStars / item.starNumber) && Math.round(item.totalStars / item.starNumber)} ({item.starNumber})</span>
+          <span>{!isNaN(item?.totalStars / item?.starNumber) && Math.round(item?.totalStars / item?.starNumber)} ({item?.starNumber})</span>
         </div>
         <div className="details">
         <i className="bi bi-heart-fill"></i> 
 
                  <div className="price">
-                      <h4>From   {currencyCode} {item.price_basic}</h4>
+                      <h4>From   {currencyCode} {item?.price_basic}</h4>
                  </div>            
             </div>
       </div>
