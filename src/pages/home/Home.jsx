@@ -17,7 +17,8 @@ const Home = () => {
   const gigs = data?.gigs || [];
   console.log("gigs seen at Home:", gigs);
 
-  const sortedData = gigs.sort((a, b) => b.sales - a.sales);
+  // Create a copy of the array before sorting
+  const sortedData = [...gigs].sort((a, b) => b.sales - a.sales);
   const top12BestSellers = sortedData.slice(0, 12);
 
   const { pathname } = useLocation();
