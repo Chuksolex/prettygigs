@@ -16,13 +16,13 @@ const BrowsingHistoryCard = ({ item }) => {
   
   return (
     <div className="card mb-3"  onClick={() => window.location.href = `/gig/${item._id}`}>
-      <img src={item.cover} className="card-img" alt="" />
+      <img src={item?.cover} className="card-img" alt="" />
       <div className="card-body text-center">
-        <h5 className="card-title">{item.title}</h5>
-        {!isNaN(item.totalStars / item.starNumber) && (
+        <h5 className="card-title">{item?.title}</h5>
+        {!isNaN(item?.totalStars / item?.starNumber) && (
           <div className="d-flex justify-content-left align-items-left">
             <i className="bi bi-star-fill" style={{color: 'orange'}}></i>
-            <span className="ms-1">{Math.round(item.totalStars / item.starNumber)}</span>
+            <span className="ms-1">{Math.round(item?.totalStars / item?.starNumber)}</span>
           </div>
         )}
       </div>

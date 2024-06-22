@@ -8,7 +8,9 @@ import "./GigSlider.scss";
 
 export default function GigSlider({images}) {
       
-       
+       if (!images){
+        return null
+       }
 
 
      

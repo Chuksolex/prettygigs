@@ -41,9 +41,7 @@ function Gig () {
    const navigate=useNavigate();
    const [showModal, setShowModal] = useState(false);
 
-   
- 
-   
+    
 
   // const { isLoading, error, data } = useQuery({
   //   queryKey: ["gig"],
@@ -57,9 +55,13 @@ function Gig () {
 
  
   const data = useSelector(state => state.gigsSlice?.data);
+   
+  if (!data) {
+    return <div style={{textAlign: "center", marginTop: "40px", marginBottom: "40px"}}>Error loading this gig. Check network and try again!</div>
+  }
 
   console.log("data at gig:" , data);
-  const gigAlone =  Array(data?.gigs).find(gig => gig?._id === gigId);// data.gigs.gigs?.find(gig => gig._id === gigId);
+  const gigAlone =  data.gigs?.find(gig => gig?._id === gigId) ;// data.gigs.gigs?.find(gig => gig._id === gigId);
   const currencyInfo= data?.currencyCode;
     console.log("gigAlone:", gigAlone);    
 
@@ -319,7 +321,7 @@ function Gig () {
           <h2 className='sub-head mb-4 text-align-left' style={{textAlign: "left"}}>Recommended Services</h2>
 
           <div className='popular row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
-            {popularGigs.map((gig) => (
+            {popularGigs?.map((gig) => (
              <div key={gig?._id} className='col'>
               <GigCard  currencyCode={currencyCode} key={gig?._id} item={gig} />
              </div>
@@ -333,9 +335,9 @@ function Gig () {
          <div className='mb-4'>
         <h2 className='mb-4' style={{textAlign: "left"}}>Your Browsing History</h2>
         <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
-          {browsingHistory.map((item) => (
-            <div className="col" key={item._id}>
-              <BrowsingHistoryCard item={item} key={item._id}/>
+          {browsingHistory?.map((item) => (
+            <div className="col" key={item?._id}>
+              <BrowsingHistoryCard item={item} key={item?._id}/>
             </div>
           ))}
         </div>
