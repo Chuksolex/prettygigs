@@ -41,5 +41,18 @@ export const homeCategoryData = [
     description: `Custom Web development, mobile apps, and solutions.`,
     imgSrc: `/img/webdevelopment.jpg`,
   },
+  {
+    id: `Writing & Translation`,
+    title: 'Writing & Translation',
+    description: `Tell your story in a unique way with writing of all kinds.`,
+    imgSrc: `/img/smilingwhiteman.jpg`,
+  },
+  {
+    id: `Music, Audio & Videos`,
+    title: 'Music, Audio & Videos',
+    description: `Get premium video, audio or podcast designs and editings.`,
+    imgSrc: `/img/finegirl1.jpg`,
+  },
   
 ];
+

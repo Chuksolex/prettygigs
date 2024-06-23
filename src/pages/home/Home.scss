@@ -86,15 +86,21 @@
     display: flex;
     justify-content: space-around;
     color: black;
+    text-decoration: none;
     font-weight: 400;
     font-family: "Canva sans", sans-serif;
-    background-color: rgb(249, 249, 249);
+    background-color: #90E8D8;
+    margin-bottom: 60px;
+
+    a{color:#231F20}
+   
 
     //here is category menu
     .popup-menu {
       position: relative;
       display: inline-flex;
-      padding: 0px 40px;
+      padding: 10px 40px;
+      line-height: 1;
 
       .menu-items {
         list-style: none;
@@ -119,6 +125,8 @@
               text-decoration: none;
               border-bottom-right-radius: 10px;
               border-bottom-left-radius: 10px;
+              margin-bottom: auto;
+              line-height: 0.7;
               
 
             }
@@ -190,6 +198,10 @@
         border-radius: 8px;  // Add some border-radius for styling
       }
     }
+  }
+  .menu{
+    overflow-x: auto;  /* Enable horizontal scrolling */
+    white-space: nowrap; 
   }
   }
   
