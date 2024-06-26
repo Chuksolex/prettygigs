@@ -37,14 +37,22 @@
 // });
 
 // vite.config.js
+// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    //vike({ prerender: true }),
-    
-  ],
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'src/entry-client.jsx',
+        ssr: 'src/entry-server.jsx'
+      }
+    }
+  },
+  ssr: {
+    noExternal: ['react-router-dom']
+  }
 });
 
