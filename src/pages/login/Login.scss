@@ -4,10 +4,11 @@
   justify-content: center;
 
   form {
-    width: auto; /* Adjust the width for smaller screens */
-    max-width: 360px; /* Limit the maximum width for larger screens */
-    padding: 20px; /* Adjust the padding for smaller screens */
+    width: 50%; /* Limit the maximum width for larger screens */
+    //padding: 20px; /* Adjust the padding for smaller screens */
     display: flex;
+    margin-right: 25%;
+    margin-left: 25%;
     flex-direction: column;
     gap: 20px;
 
@@ -28,7 +29,7 @@
       border: 1px solid rgb(216, 214, 214);
       font-size: 1.8rem;
       border-radius: 5px;
-      width: 30rem;
+      width: 100%;
     }
 
     button {
@@ -37,10 +38,11 @@
       color: white;
       font-weight: 500;
       font-size: 1.8rem;
-      background-color: #C6B7DE;
+      background-color: orange;
       border-radius: 5px;
       cursor: pointer;
-      width: 30rem;
+      width: 100% !important;
+      
     }
 
     span {
@@ -62,6 +64,10 @@
     form {
       padding: 10px;
       gap: 10px;
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+
 
       h1 {
         font-size: 1.8rem;

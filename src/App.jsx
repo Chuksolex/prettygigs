@@ -41,6 +41,7 @@ import Message from './pages/message/Message.jsx';
 import Messages from './pages/messages/Messages.jsx';
 import LpSolver from './pages/analysis/OnlineTutorAnalysis.jsx';
 import { Helmet } from 'react-helmet';
+import SupportRequest from './pages/supportrequest/SupportRequest.jsx';
 
 
 
@@ -122,6 +123,9 @@ function App() {
         {path: "/message/:id", element: <Message/>},
         {path: "/messages", element: <Messages/>},
         {path: "/analysis/online-tutor", element: <LpSolver />},
+        {path: "/support-request", element: <SupportRequest />},
+
+
 
 
 

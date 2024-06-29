@@ -1,12 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
+
 
 const ServiceCarousel = () => {
+  
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      //nextArrow: <NextArrow />,
+     // prevArrow: <PrevArrow />,
+    };
+  
   return (
-    <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <Link to="/service1">
+    <div>
+      <Slider {...settings}>
+      <div>
+          <Link to="/services/Writing%20&%20Translation">
+       
             <img
               className="d-block w-100"
               src="public/img/contentidea.png"
@@ -45,7 +61,8 @@ const ServiceCarousel = () => {
             />
           </Link>
         </div>
-      </div>
+        
+    </Slider>
     </div>
   );
 };

@@ -72,7 +72,7 @@ function Login() {
           {error && error}
         </div>
         <div>
-          <Link style={{ textDecoration: 'none', linkStyle: 'none' }} to="/register">
+          <Link style={{ textDecoration: 'none', linkStyle: 'none', }} to="/register">
             Register
           </Link>
         </div>
