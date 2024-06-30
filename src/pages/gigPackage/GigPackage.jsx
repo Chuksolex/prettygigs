@@ -134,7 +134,7 @@ const goToCheckout = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-8 fl-lft m_bot2 m_top2 chk-sty mx-wdt div-col-md-8">
-                    <h2 className='fs-2 mb-3'><b>Customize Your Package</b></h2>
+                    <h2 className='fs-2 mb-3 text-start'><b>Customize Your Package</b></h2>
                     <div className="col-md-12 col-12 col-mgr pad0 m_top2">
                         <div className="row">
                             <div className="col-12 col-md-4 col-sm-4 fl-lft pad0 mx-wdt">
@@ -158,7 +158,7 @@ const goToCheckout = () => {
                                     </p> )}
 
 
-                                <button type="button" className="btn btn-primary btn-lg">{selectedGig.shortDesc}</button>
+                                <p  className="bg-secondary">{selectedGig.shortDesc}</p>
                             </div>
                         </div>
 
@@ -187,12 +187,12 @@ const goToCheckout = () => {
                     <div ></div>
 
                     <div className="mt-2 ">
-                        <h3 className="fw-500">Addons</h3>
+                        <h3 className="fw-500 text-start">Addons</h3>
                     </div>
                     {selectedGig.addons.map((addon, index)=> (
 
                 
-                    <div key={addon.index} className="row border res-m0 mt-5 mb-3 pb-5 pt-5 lh-2 text-md-left ">
+                    <div key={addon.index} className="row border border-primary w-100 res-m0 mt-5 mb-3 pb-5 pt-5 lh-2 text-md-left text-start">
                         <div className="col-md-1 col-sm-1 col-1">
                             <label className="containerr">
                                 <input type="checkbox" className="checkbox1" onClick={() => handleAddonSelection(index)} />
@@ -226,21 +226,21 @@ const goToCheckout = () => {
                         <div className="col-12 col-md-12 m_top1 chk-bor b-r-5">
                             <h3 className="mt-1 fw-500 fs-2">Summary </h3>
                             <div className="row m0">
-                                <div className="col col-9  fl-lft ">
-                                    <p className='fs-3'> Subtotal  </p>
+                                <div className="col col-7  fl-lft ">
+                                    <p className='fs-4 text-start'> Subtotal  </p>
                                 </div>
-                                <div className="col col-3 ">
-                                    <p className=" fs-3 "><span className="total_amt">{selectedGig.currencyCode} {totalPrice}</span></p>
+                                <div className="col col-5 ">
+                                    <p className=" fs-4 "><span className="total_amt">{selectedGig.currencyCode} {totalPrice}</span></p>
                                 </div>
                             </div>                       
 
                             <div className="chk-bot m_bot2"></div>
                             <div className="row m0">
-                                <div className="col-9  ">
-                                    <h4 className="tol-fnt fw-500 fs-2"> Total </h4>
+                                <div className="col-7  ">
+                                    <h4 className="tol-fnt fw-500 fs-4 text-start"> Total </h4>
                                 </div>
-                                <div className="col-3">
-                                    <h4 className="tol-fnt fw-500 text-left fs-3"><span className="total_amt">{selectedGig.currencyCode} {totalPrice}</span></h4>
+                                <div className="col-5">
+                                    <h4 className="tol-fnt fw-500 text-left fs-4"><span className="total_amt">{selectedGig.currencyCode} {totalPrice}</span></h4>
                                 </div></div><div ></div>
 
                        
@@ -267,7 +267,7 @@ const goToCheckout = () => {
                     <div ></div>
 
                     <div className="col-12 col-md-12 mt-4 text-center p-4">
-                        <img src="https://digihub.marketpresso.com/images/template/1/payment.png" />
+                        <img src="/img/payment.png" />
                         <p className="chk-cen"> <span className="str-col theme_color_txt"> <i className="fa fa-lock theme_color_txt" aria-hidden="true"></i> SSL </span> SECURED PAYMENT </p>
                         <p className="chk-smltxt">Your information is protected by 256-bit SSL encryption</p>
                     </div>

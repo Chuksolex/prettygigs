@@ -173,12 +173,12 @@ const Pay = () => {
       </div>
     </div>
   </div>
-  <div className="col-sm-12 col-md-4 col-lg-4 ">
+  <div className="col-sm-12 col-md-4 col-lg-4">
     <div className="card mb-6 ml-4 mt-4 w-100 bg-warning " style={{background: "#F4E2DE", height: "300px"}}>
       <div className="card-header bg-warning">
         <h5 className="fs-2">Summary</h5>
       </div>
-      <div className="card-body text-start bg-warning text-center">
+      <div className="card-body text-start bg-warning text-start ">
         <ul className="">
           <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0 fs-4 m-3">
           Subtotal ({cartItems.length + " Items"})
@@ -194,17 +194,20 @@ const Pay = () => {
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3 mr-3 fs-4 m-3">
             <div>
-              <p className="mb-0 fs-"><strong>Total amount</strong></p>
-              <strong>
+              <p className="mb-0 fw-500 fs-4 text-start">Total amount</p>
+              
                 <p className="mb-0 fs-5">(including VAT)</p>
-              </strong>
+              
             </div>
             <span className="fs-4 ">
             <strong>{cartItems[0]?.currencyCode} {Math.floor(getTotal().totalPrice - getTotal().totalDiscount)}</strong>
             </span>
           </li>
         </ul>
-        <button type="button" className="btn btn-primary btn-lg btn-block fs-4 p-2 mt-4 mr-4 ms-4 text-center" onClick={handlePayment} disabled={!selectedPaymentMethod}>Pay Now</button>
+        <div style={{width: "50%", marginLeft: "25%"}}>
+        <button type="button" className="btn btn-primary btn-lg btn-block fs-4 p-2 mt-4 w-100 " onClick={handlePayment} disabled={!selectedPaymentMethod}>Pay Now</button>
+
+        </div>
         {error && <p className="text-danger">{error}</p>}
       </div>
     </div>

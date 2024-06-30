@@ -13,7 +13,7 @@
         .upperSide{
             width: 100%;
             display: flex;
-            gap: 10px;
+            gap: 30px;
             padding: 20px 0px;
             margin-top: 20px;
 
@@ -27,6 +27,14 @@
 
             .breadcrumbs{
                 font-family: 300; font-size: 13px; color: #555;
+            }
+
+            .title{
+                font-size: 30px;
+                @media (max-width: 720px) {
+                    font-size: 24px;
+                    
+                }
             }
 
             .user{

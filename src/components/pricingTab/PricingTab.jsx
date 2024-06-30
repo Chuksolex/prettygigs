@@ -216,7 +216,7 @@ const PricingTab = ({ item, currencyCode, currentUser }) => {
       </button>      */}
       <button type="button" className="link-button"  onClick={(e) => handleProceed(e)}>Proceed</button>
 
-         <Link className="link-button bg-secondayr text-dark"
+         <Link className="link-button bg-warning text-dark"
           onClick={handleContactSeller}
         
         >Contact Seller</Link>
