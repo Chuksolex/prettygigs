@@ -86,7 +86,11 @@
       .title {
         display: flex;
         justify-content: space-between;
-        font-size: 2.4rem;
+        font-size: 18px;
+
+        h1{
+          font-size: 24px;
+        }
   
         button {
           background-color: #1dbf73;
@@ -95,7 +99,7 @@
           border: none;
           padding: 10px;
           cursor: pointer;
-          font-size: 1.8rem;
+          font-size: 16px;
 
         }
       }
@@ -107,28 +111,28 @@
           height: 100px;
           th {
             text-align: left;
-            font-size: 2.0rem;
+            font-size: 18px;
 
           }
           td {
             padding: 10px;
-            font-size: 1.8rem;
+            font-size: 16px;
             .link{
-              font-size: 1.8rem;
+              font-size: 16px;
 
             }
 
   
             &:first-child {
               font-weight: 500;
-              font-size: 1.8rem;
+              font-size: 16px;
 
             }
             
             &:nth-child(2),
             &:nth-child(3) {
               color: gray;
-              font-size: 1.8rem;
+              font-size: 16px;
 
             }
           }
@@ -139,7 +143,7 @@
             padding: 10px;
             border: none;
             cursor: pointer;
-            font-size: 1.8rem;
+            font-size: 16px;
 
           }
   

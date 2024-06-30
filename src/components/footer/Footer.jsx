@@ -7,12 +7,12 @@ function Footer() {
 
 return (
     <div className="container footerall">
-<footer className="py-5">
+<footer className="">
     <div className="row">
       <div className="col-6 col-md-2 mb-3">
         <h5>Company</h5>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home: Prettygigs</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
           <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">Contact</a></li>
           <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
           <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
@@ -24,7 +24,7 @@ return (
         <h5>Services</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2"><a href="/live-tutor" className="nav-link p-0 text-muted">Coding-Tutorials</a></li>
-          <li className="nav-item mb-2"><a href="/gigs" className="nav-link p-0 text-muted">General Gigs or Services</a></li>
+          <li className="nav-item mb-2"><a href="/gigs" className="nav-link p-0 text-muted">Gigs or Services</a></li>
           <li className="nav-item mb-2"><a href="/#software" className="nav-link p-0 text-muted">Software Development</a></li>
           <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Graphic Design</a></li>
           <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Data Analysis</a></li>
@@ -48,6 +48,7 @@ return (
         <div className="card">
           <div className="card-body">
             <h5 className="card-title text-center">Subscribe to our Newsletter</h5>
+             <p>One newsletter per month only.</p>
             <form>
               <div className="form-group">
                 
@@ -55,9 +56,10 @@ return (
               </div>
               <div className="form-group">
                
-                <input type="text" className="form-control" id="name" placeholder="Your name" required />
+                <input type="text" className="form-control " id="name" placeholder="Your name" required />
+                <button type="submit" className="btn btn-primary btn-block w-100">Subscribe</button>
+
               </div>
-              <button type="submit" className="btn btn-primary btn-block ">Subscribe</button>
             </form>
           </div>
         </div>
@@ -66,7 +68,7 @@ return (
     </div>
     </div>
 
-    <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top footerlast">
+    <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-secondary footerlast mb-0">
       <p>© 2024 Prettygigs.com.ng by Bemultimediahost Ltd. All rights reserved.</p>
       <ul className="list-unstyled d-flex">
         <li className="ms-3"><a className="link-dark" href="#"><svg className="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>

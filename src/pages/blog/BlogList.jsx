@@ -31,7 +31,7 @@ const BlogList = ({recommendedServices}) => {
           setLoading(false);
       } catch (error) {
         console.error(error);
-        setError('Failed to fetch blog posts.');
+        setError('Failed to fetch blog posts. Check network and try again.');
         setLoading(false);
       }
     };
