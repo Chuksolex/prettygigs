@@ -8,22 +8,26 @@
             padding: 5rem 2rem;
               .title{
                 display: flex; justify-content: space-between; align-items:
-                 center; font-size: 2.4rem; font-weight: 500;
+                 center; font-size: 24px; font-weight: 500;
+
+                 h1{
+                    font-size: 24px;
+                 }
                  button{
                     cursor: pointer; font-weight: 500; color: white; background-color: #2c78ba;
-                     padding: 10px; border: none; font-size: 1.8rem;
+                     padding: 10px; border: none; font-size: 18px;
                  }
              }
            table{
                 width: 100%;
                 tr{
                      th{text-align: left;
-                         font-size: 2rem;
+                         font-size: 18px;
                      }
                      height: 60px;
                      font-size: 2.2rem; font-weight: 300;
                      td{
-                         width: 50px; height: 25px; object-fit: cover; font-size: 1.6rem;
+                         width: 50px; height: 25px; object-fit: cover; font-size: 16px;
                         .img{
                             
                                  width: 50px; height: 25px;
@@ -39,7 +43,7 @@
                     }
                      &:nth-child(even){
                          background-color: #1dbf730f ;
-                        font-size: 1.6rem;
+                        font-size: 16px;
                     }
                  }
                
@@ -62,7 +66,7 @@
                padding: 3rem 1rem;
                  .title{
                    display: flex; justify-content: space-between; align-items:
-                    center; font-size: 1.8rem; font-weight: 500;
+                    center; font-size: 18px; font-weight: 500;
                     button{
                        cursor: pointer; font-weight: 500; color: white; background-color: #2c78ba;
                         padding: 5px; border: none; font-size: 1.4rem;
@@ -72,17 +76,17 @@
                    width: 100%;
                    tr{
                         th{text-align: left;
-                            font-size: 1.6rem;
+                            font-size: 16px;
                         }
                         height: 30px;
-                        font-size: 1.8rem; font-weight: 300;
+                        font-size: 18px; font-weight: 300;
 
                         th .tx_ref{
                             display: none;
                             
                         }
                         td{
-                            width: 50px; height: 18px; object-fit: cover; font-size: 1.4rem;
+                            width: 50px; height: 18px; object-fit: cover; font-size: 14px;
                            .img{
                                
                                     width: 50px; height: 50px;
@@ -98,7 +102,7 @@
                        }
                         &:nth-child(even){
                             background-color: #1dbf730f ;
-                           font-size: 1.4rem;
+                           font-size: 14px
                        }
                     }
                   
