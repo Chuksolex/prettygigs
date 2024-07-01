@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import OrderCard from '../../components/orderCard/orderCard';
 
 const Orders = () => {
-  const currentUser = useSelector((state) => state.auth?.currentUser);
+  const currentUser = useSelector((state) => state.auth?.currentUser) || null;
+  console.log("user at orders", currentUser);
   const [sortedData, setSortedData] = useState([]);
 
   const { isLoading, error, data } = useQuery({
