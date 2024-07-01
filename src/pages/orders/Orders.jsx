@@ -3,7 +3,7 @@
 import React, {useState} from 'react';
 import "./Orders.scss";
 import {useQuery} from "@tanstack/react-query";
-
+import { useSelector } from 'react-redux';
 import newRequest from "../../utils/newRequest.js";
 import {Link} from "react-router-dom";
 import OrderCard from '../../components/orderCard/orderCard';
@@ -12,7 +12,7 @@ import OrderCard from '../../components/orderCard/orderCard';
 
 const Orders = () => {
 
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser = useSelector((state) => state.auth.currentUser);
   const [sortedData, setSortedData] = useState([]);
 
   const { isLoading, error, data, } = useQuery({
@@ -51,7 +51,7 @@ const Orders = () => {
     </div>
     <table>
       <tr>
-      {(currentUser.isSeller)? <th>Buyer</th>: <th>Seller</th>}
+      {(currentUser?.isSeller)? <th>Buyer</th>: <th>Seller</th>}
         <th>Price</th>
         <th className='tx_ref'>Trans. Ref.</th>
         <th>Time</th>
@@ -62,7 +62,7 @@ const Orders = () => {
 
  
       </tr>
-      {sortedData.map((order) => (
+      {sortedData?.map((order) => (
         <tr key={order._id}>
          <OrderCard singleOrder={order} />
         
