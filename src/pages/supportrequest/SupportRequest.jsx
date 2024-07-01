@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SupportRequest.scss';
 
-
 const SupportRequest = () => {
   const { isLoggedIn, currentUser } = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -32,8 +31,12 @@ const SupportRequest = () => {
     }
   };
 
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErr(null); // Reset error state
+
     if (!isLoggedIn) {
       alert('Please log in or register to submit a support request.');
       navigate('/login');
@@ -41,6 +44,7 @@ const SupportRequest = () => {
     }
 
     setLoading(true);
+
     if (validateForm()) {
       try {
         let attachmentUrl = '';
@@ -48,30 +52,42 @@ const SupportRequest = () => {
         if (supportDetails.attachment) {
           const formData = new FormData();
           formData.append('file', supportDetails.attachment);
-          formData.append('upload_preset', 'bemultim'); // Replace with your Cloudinary upload preset
+          formData.append('upload_preset', 'prettygigs_support'); // Replace with your Cloudinary upload preset
 
           const response = await axios.post('https://api.cloudinary.com/v1_1/bemultim/auto/upload', formData); // Replace with your Cloudinary URL
           attachmentUrl = response.data.url;
+
+          console.log("attachment url",  attachmentUrl);
         }
 
-        const response = await axios.post('https://phaxnetgigs.onrender.com/api/supportRequest', {
-          ...supportDetails,
+        const supportRequestData = {
+          title: supportDetails.title,
+          description: supportDetails.description,
           attachmentUrl,
           user: currentUser._id // Assuming the user ID is stored in the currentUser object
-        });
+        };
 
+        const response = await axios.post('https://phaxnetgigs.onrender.com/api/supportRequest', supportRequestData);
+   
         if (response.status === 200) {
           alert('Support request submitted successfully.');
-          setLoading(false);
-          // Optionally reset form fields
+          setSupportDetails({
+            title: '',
+            description: '',
+            attachment: null,
+            attachmentUrl: ''
+          });
         } else {
           throw new Error('Failed to submit support request. Please try again.');
         }
       } catch (error) {
         console.error('Error submitting support request:', error);
         setErr(error.message);
+      } finally {
         setLoading(false);
       }
+    } else {
+      setLoading(false);
     }
   };
 
@@ -139,7 +155,7 @@ const SupportRequest = () => {
               <button className="btn button mb-1 fs-6" type="submit">
                 {loading ? "Sending Request..." : "Submit Request"}
               </button>
-              <p>{err && err}</p>
+              {err && <p className="error-message">{err}</p>}
             </form>
           </div>
         </div>
@@ -149,3 +165,9 @@ const SupportRequest = () => {
 };
 
 export default SupportRequest;
+
+
+
+
+
+

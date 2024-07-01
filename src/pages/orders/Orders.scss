@@ -1,6 +1,7 @@
  .orders{
      display: flex;
      justify-content: center;
+     margin: 40px 0;
 
     
         .container{
@@ -26,11 +27,12 @@
                      }
                      height: 60px;
                      font-size: 2.2rem; font-weight: 300;
+
                      td{
                          width: 50px; height: 25px; object-fit: cover; font-size: 16px;
                         .img{
                             
-                                 width: 50px; height: 25px;
+                                 width: 40px !important; height: 25px;
                                  object-fit: cover;
                             
 

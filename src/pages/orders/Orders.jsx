@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Orders.scss";
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from 'react-redux';
 import newRequest from "../../utils/newRequest.js";
-import { Link } from "react-router-dom";
 import OrderCard from '../../components/orderCard/orderCard';
 
 const Orders = () => {
-  
-  const user = useSelector((state) => state?.auth);
-  console.log("user at orders", user);
+  const currentUser = useSelector((state) => state?.auth?.currentUser) || "";
   const [sortedData, setSortedData] = useState([]);
+
+  useEffect(() => {
+    if (!currentUser) {
+      console.log("User not logged in");
+    }
+  }, [currentUser]);
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['orders'],
@@ -31,13 +34,17 @@ const Orders = () => {
         })
   });
 
-  if (!user) {
+  if (!currentUser) {
     return <div>Error: User not logged in</div>;
   }
 
   return (
     <div className="orders">
-      {isLoading ? ("Loading..") : error ? ("Error") : (
+      {isLoading ? (
+        "Loading..."
+      ) : error ? (
+        "Error loading orders. Check network or try logging in again."
+      ) : (
         <div className="container">
           <div className="title">
             <h1>My Orders</h1>
@@ -45,7 +52,7 @@ const Orders = () => {
           <table>
             <thead>
               <tr>
-                {user?.isSeller ? <th>Buyer</th> : <th>Seller</th>}
+                {currentUser?.isSeller ? <th>Buyer</th> : <th>Seller</th>}
                 <th>Price</th>
                 <th className='tx_ref'>Trans. Ref.</th>
                 <th>Time</th>

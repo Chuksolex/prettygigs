@@ -48,8 +48,8 @@ function SingleOrder() {
 
       {/* Actions Section */}
       <div className="order-actions">
-        <button className="action-button">Action 1</button>
-        <button className="action-button">Action 2</button>
+        {/* <button className="action-button">Action 1</button>
+        <button className="action-button">Action 2</button> */}
       </div>
 
       {/* Order Details Section */}

@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import upload from "../../utils/upload.js";
 import "./Register.scss";
 import newRequest from "../../utils/newRequest.js";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
 
 function Register() {
   const [file, setFile] = useState(null);

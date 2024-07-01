@@ -3,7 +3,7 @@
 const upload = async (file) => {
   const data = new FormData();
   data.append("file", file);
-  data.append("upload_preset", "bemultim");
+  data.append("upload_preset", "prettygigs_gig_images");
 
 
   

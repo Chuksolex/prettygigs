@@ -34,9 +34,9 @@ return (
       <div className="col-6 col-md-2 mb-3">
         <h5>Legal</h5>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Privacy Policy</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Terms and Conditions</a></li>
-          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="/privacy" className="nav-link p-0 text-muted">Privacy Policy</a></li>
+          <li className="nav-item mb-2"><a href="/terms" className="nav-link p-0 text-muted">Terms and Conditions</a></li>
+          <li className="nav-item mb-2"><a href="/terms" className="nav-link p-0 text-muted">Pricing</a></li>
           
           
         </ul>

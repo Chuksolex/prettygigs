@@ -6,21 +6,22 @@
         .container{
             width: 1100px;
             padding: 50px 0px;
+            text-align: left;
              .title{
                 display: flex; justify-content: space-between; align-items: center;
-                font-size: 2.4rem;
+                font-size: 24px;
                 button{
                     cursor: pointer; font-weight: 500; color: white; background-color: #2c78ba;
-                    padding: 10px; border: none; font-size: 1.8rem;
+                    padding: 10px; border: none; font-size: 18px;
                 }
             }
             table{
                 width: 100%;
                 tr{
-                    th{text-align: left; font-size: 2.2rem}
+                    th{text-align: left; font-size: 18px}
                     height: 50px; 
                     td{
-                        width: 50px; height: 25px; object-fit: cover; font-size: 2rem;
+                        width: 50px; height: 25px; object-fit: cover; font-size: 18px;
                         .img{
                             
                                 width: 50px; height: 25px;

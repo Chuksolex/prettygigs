@@ -79,13 +79,17 @@ const Message = () => {
   return (
     <div className="message">
       <div className="container">
+        <div className="border border-secondary bg-secondary p-2">
         <span className="breadcrumbs">
-          <Link to="/messages">Messages</Link> ›<span>{currentUser.username}</span>›
+          <Link to="/messages" id="mess">Messages</Link> ›<span>{currentUser.username}</span>›
         </span>
+
+        </div>
+        
         {isLoading ? (
-          "loading"
+          "loading..."
         ) : error ? (
-          "error"
+          "Error loading messages. Check network!"
         ) : (
           <div className="messages">
             {data.map((m) => (
@@ -107,14 +111,15 @@ const Message = () => {
             onChange={handleTyping} 
             disabled={isLoading} 
             
-          />
-
+            
+          >  </textarea>
+            {isLoading ? (
+            <span>Loading...</span> 
+          ) : (
+            isTyping && <span>Typing...</span>
+          )}
           <button type="submit">Send</button>
-          {isLoading ? (
-          <span>Loading...</span> 
-        ) : (
-          isTyping && <span>Typing...</span>
-        )}
+        
         </form>
       </div>
     </div>

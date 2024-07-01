@@ -68,8 +68,9 @@ function Login() {
         />
         <button type="submit" className='fs-4'>{loading ? 'Trying login...' : 'Login'}</button>
         <div>
+        <p> {error && error}</p>
           <Link to="/forgot-password">Forgot Password?</Link>
-          {error && error}
+          
         </div>
         <div>
           <Link style={{ textDecoration: 'none', linkStyle: 'none', }} to="/register">

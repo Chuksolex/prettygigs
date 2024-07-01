@@ -44,6 +44,7 @@ import { Helmet } from 'react-helmet';
 import SupportRequest from './pages/supportrequest/SupportRequest.jsx';
 import VerifyEmail from './pages/verifyEmail/VerifyEmail.jsx';
 import Success from './pages/success/Success.jsx';
+import SimpleUpload from './utils/simpleUpload.jsx';
 
 
 
@@ -128,6 +129,8 @@ function App() {
         {path: "/support-request", element: <SupportRequest />},
         {path: "/verify-email", element: <VerifyEmail />},
         {path: "/success", element: <Success />},
+        {path: "/simpleupload", element: <SimpleUpload />},
+
 
 
 
