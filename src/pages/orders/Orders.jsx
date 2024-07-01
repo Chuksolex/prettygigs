@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import OrderCard from '../../components/orderCard/orderCard';
 
 const Orders = () => {
-  const currentUser = useSelector((state) => state.auth?.currentUser) || null;
+  const [currentUser, setCurrentUser] = useState(null)
+  const user = useSelector((state) => state.auth.currentUser);
   console.log("user at orders", currentUser);
   const [sortedData, setSortedData] = useState([]);
 
@@ -30,7 +31,9 @@ const Orders = () => {
         })
   });
 
-  if (!currentUser) {
+  if (user) {
+    setCurrentUser(user)
+  }else{
     return <div>Error: User not logged in</div>;
   }
 
@@ -44,7 +47,7 @@ const Orders = () => {
           <table>
             <thead>
               <tr>
-                {(currentUser.isSeller) ? <th>Buyer</th> : <th>Seller</th>}
+                {currentUser.isSeller ? <th>Buyer</th> : <th>Seller</th>}
                 <th>Price</th>
                 <th className='tx_ref'>Trans. Ref.</th>
                 <th>Time</th>
