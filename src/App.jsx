@@ -43,6 +43,7 @@ import LpSolver from './pages/analysis/OnlineTutorAnalysis.jsx';
 import { Helmet } from 'react-helmet';
 import SupportRequest from './pages/supportrequest/SupportRequest.jsx';
 import VerifyEmail from './pages/verifyEmail/VerifyEmail.jsx';
+import Success from './pages/success/Success.jsx';
 
 
 
@@ -126,6 +127,8 @@ function App() {
         {path: "/analysis/online-tutor", element: <LpSolver />},
         {path: "/support-request", element: <SupportRequest />},
         {path: "/verify-email", element: <VerifyEmail />},
+        {path: "/success", element: <Success />},
+
 
 
 
