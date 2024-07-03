@@ -2,9 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Success.scss";
-import { useSelector, useDispatch } from "react-redux";
+import ReactGa from "react-ga4";
 
 const Success = () => {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/success',
+      title: "Success"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'Success',
+  });
+  
   const { search } = useLocation();
   const navigate = useNavigate();
   const params = new URLSearchParams(search);

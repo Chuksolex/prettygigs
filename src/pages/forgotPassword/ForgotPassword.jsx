@@ -3,8 +3,23 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import newRequest from '../../utils/newRequest';
 import "./ForgotPassword.scss";
+import ReactGA from "react-ga4";
 
 function ForgotPassword() {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/forgotpassword',
+      title: "ForgotPassword"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'ForgotPassword',
+  });
+  
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);

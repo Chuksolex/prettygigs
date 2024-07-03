@@ -3,8 +3,23 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SupportRequest.scss';
+import ReactGA from "react-ga4";
 
 const SupportRequest = () => {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/support-request',
+      title: "SupportRequest"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'SupportRequest',
+  });
+  
   const { isLoggedIn, currentUser } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 

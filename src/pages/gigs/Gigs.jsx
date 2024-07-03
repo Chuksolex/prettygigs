@@ -9,10 +9,25 @@ import DiscountModal from '../../components/discountModal/DiscountModal';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from 'react-helmet';
+import ReactGA from "react-ga4";
 
 
 
 const Gigs = () => {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/gigs',
+      title: "Gigs"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'Gigpage',
+  });
+  
   const data = useSelector(state => state.gigsSlice.data);
   const [filteredSearch, setFilteredSearch] = useState(undefined);
   console.log("data frm gig:", data);

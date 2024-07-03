@@ -1,8 +1,19 @@
 import React from 'react';
 import './Terms.scss';
 import { Link } from 'react-router-dom';
+import ReactGA from "react-ga4";
 
 const Terms = () => {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/project-request',
+      title: "ProjectRequest"
+    }
+  );
+
+ 
+  
   return (
     <div className="terms-container">
       <h1>Terms and Conditions</h1>

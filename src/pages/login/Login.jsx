@@ -5,8 +5,23 @@ import { useDispatch } from 'react-redux';
 import newRequest from '../../utils/newRequest';
 import { login } from '../../reducers/authSlice';
 import './Login.scss';
+import ReactGA from "react-ga4";
 
 function Login() {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/login',
+      title: "Login"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'Login',
+  });
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);

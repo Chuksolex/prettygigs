@@ -1,8 +1,23 @@
  import { useSelector } from "react-redux";
-import "./Live_Tutor_Register.scss"
+import "./Live_Tutor_Register.scss";
+import ReactGA from "react-ga4";
  
  
  const Live_Tutor_Register = () => {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/live-tutor-register',
+      title: "LiveTutorRegister"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'LiveTutorRegister',
+  });
+  
   const selectedCurrency =useSelector((state) => state.currencySlice.selectedCurrency);
   console.log(`selectedCurrency at Tutor Register: ${selectedCurrency}`);
     return(

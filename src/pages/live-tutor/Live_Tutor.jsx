@@ -3,11 +3,26 @@
 import Live_TutorSlide from "../../components/slider/Live_TutorSlider";
 import TutorFaq from "../../components/faq/TutorFaq";
 import { useNavigate } from "react-router-dom";
-import videosrc from "../../assets/Live-tutor-video1.mp4"
+import videosrc from "../../assets/Live-tutor-video1.mp4";
+import ReactGA from "react-ga4";
 
 
 
 const Live_Tutor = () => { 
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/live-tutor',
+      title: "LiveTutor"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'LiveTutor',
+  });
+  
     const navigate = useNavigate()
  
 

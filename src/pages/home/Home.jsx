@@ -11,7 +11,7 @@ import SimpleSlider from '../../components/slider/HomeSlider';
 import HomeCategory from '../../components/homeCategory/HomeCategory';
 import AboutMarketPlace from '../../components/aboutMarketPlace/AboutMarketPlace';
 import Testimonial from '../../components/testimonial/Testimonial';
-
+import ReactGA from "react-ga4";
  import FAQ from '../../components/faq/FAQ';
 // import newRequest from '../../utils/newRequest';
 // import GigCard from '../../components/gigCard/GigCard';
@@ -43,6 +43,21 @@ const Home = () => {
   //     console.log(error)
   //   }
   // };
+
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/',
+      title: "Home"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'Homepage',
+  });
+  
 
   const data = useSelector(state => state.gigsSlice.data);
   console.log("gigs fetched in Home?:", data);

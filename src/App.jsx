@@ -45,10 +45,16 @@ import SupportRequest from './pages/supportrequest/SupportRequest.jsx';
 import VerifyEmail from './pages/verifyEmail/VerifyEmail.jsx';
 import Success from './pages/success/Success.jsx';
 import SimpleUpload from './utils/simpleUpload.jsx';
+import ReactGA from 'react-ga4';
+
 
 
 
 function App() {
+
+  ReactGA.initialize('G-EBXTQ1JT0M');
+
+
   const dispatch = useDispatch(); 
   const gigsTimestamp = useSelector(state => state.gigsSlice.timestamp ); 
   const selectedCurrency = useSelector(state => state.currencySlice.selectedCurrency); // Replace 'currency' with your actual state slice

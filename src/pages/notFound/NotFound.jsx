@@ -1,10 +1,26 @@
 import { useNavigate} from "react-router-dom";
-import "./NotFound.css"
+import "./NotFound.css";
+import ReactGA from "react-ga4";
 
 export default function NotFound() {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/notfound',
+      title: "NotFound"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'GoToHOme',
+  });
+  
     const navigate = useNavigate()
 
 function goToHome(){
+
   navigate("/")
 }
 

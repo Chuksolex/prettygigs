@@ -3,8 +3,23 @@ import upload from "../../utils/upload.js";
 import "./Register.scss";
 import newRequest from "../../utils/newRequest.js";
 import { useNavigate, Link } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 function Register() {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/register',
+      title: "Register"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'Register',
+  });
+  
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);

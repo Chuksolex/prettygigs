@@ -5,8 +5,23 @@ import DatePicker from 'react-datepicker';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import 'react-datepicker/dist/react-datepicker.css';
+import ReactGa from "react-ga4";
 
 const ProjectRequest = () => {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/project-request',
+      title: "ProjectRequest"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'ProjectRequest',
+  });
+  
   const [err, setErr] = useState(null);
   const [loading, setLoading] = useState(false);
   const [projectDetails, setProjectDetails] = useState({

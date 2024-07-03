@@ -8,8 +8,23 @@ import {  incrementQuantity, decrementQuantity, removeItem } from '../../reducer
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReactGA from "react-ga4";
 
 const Pay = () => {
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/pay',
+      title: "Pay"
+    }
+  );
+
+  ReactGA.event({
+    category: 'User Interaction',
+    action: 'Clicked Call to Action Button',
+    label: 'Pay',
+  });
+  
  
   const dispatch = useDispatch();
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');

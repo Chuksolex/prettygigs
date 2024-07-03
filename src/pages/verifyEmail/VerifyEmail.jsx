@@ -3,11 +3,19 @@ import {  useNavigate, useParams, useLocation, useSearchParams } from "react-rou
 import newRequest from "../../utils/newRequest";
 import "./VerifyEmail.scss";
 import { useQuery } from "@tanstack/react-query";
+import ReactGA from "react-ga4";
+
 
 
 const VerifyEmail = () => {
     
-    
+  ReactGA.send(
+    {
+      hitType: "pageview",
+      page: '/verify-email',
+      title: "VerifyEmail"
+    }
+  );
   
   const [verificationStatus, setVerificationStatus] = useState("Verifying...");
   const [err, setErr] =useState(false);
@@ -24,6 +32,10 @@ const emailToken = search.get("emailToken");
 
   useEffect(() => {
     const verifyEmail = async () => {
+    
+    
+      
+      
       try {
         const response = await newRequest.patch(`/auth/verify-email?emailToken=${emailToken}`);
         console.log(response.data); // Handle the response as needed
