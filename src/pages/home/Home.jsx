@@ -144,6 +144,7 @@ const categories = [
  
     <div className=''>
       <Helmet>
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <title>Home - Prettygigs.com.NG</title>
         <meta name="description" content="Welcome to Prettygigs.com.NG, your one-stop solution for digital services like web development, data analytics, and graphic design." />
       </Helmet>

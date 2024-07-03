@@ -15,6 +15,7 @@ import CreateConversation from '../../components/createConversation/createConver
 import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GigSlider from '../../components/slider/GigSlider';
+import { Helmet } from 'react-helmet';
 
 
 const GigOptionsModal = ({ gigId, onDelete, onEdit }) => {
@@ -40,6 +41,7 @@ function Gig () {
    const [currencyCode, setCurrencyCode] = useState('');
    const navigate=useNavigate();
    const [showModal, setShowModal] = useState(false);
+
 
     
 
@@ -230,6 +232,12 @@ function Gig () {
         "Something went wrong!"
       ) : ( */}
        <div className="container">
+       <Helmet>
+       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <title>{gigAlone?.title}</title>
+        <meta name="description" content={gigId?.shortDesc} />
+      </Helmet>
+
         <div className='upperSide'>
         <div className="left">
           

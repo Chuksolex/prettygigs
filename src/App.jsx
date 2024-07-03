@@ -39,7 +39,7 @@ import Illustration from './pages/services/Illustration.jsx';
 import DigitalMarketing from './pages/services/Digital-Marketing.jsx';
 import Message from './pages/message/Message.jsx';
 import Messages from './pages/messages/Messages.jsx';
-import LpSolver from './pages/analysis/OnlineTutorAnalysis.jsx';
+//import LpSolver from './pages/analysis/OnlineTutorAnalysis.jsx';
 import { Helmet } from 'react-helmet';
 import SupportRequest from './pages/supportrequest/SupportRequest.jsx';
 import VerifyEmail from './pages/verifyEmail/VerifyEmail.jsx';
@@ -125,7 +125,7 @@ function App() {
         {path: "/services/digital-marketing", element: <DigitalMarketing />},
         {path: "/message/:id", element: <Message/>},
         {path: "/messages", element: <Messages/>},
-        {path: "/analysis/online-tutor", element: <LpSolver />},
+        //{path: "/analysis/online-tutor", element: <LpSolver />},
         {path: "/support-request", element: <SupportRequest />},
         {path: "/verify-email", element: <VerifyEmail />},
         {path: "/success", element: <Success />},

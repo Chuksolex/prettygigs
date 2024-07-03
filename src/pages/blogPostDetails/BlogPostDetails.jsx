@@ -7,8 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/sideBar/sideBar';
 import { format } from 'date-fns';
-
-
+import { Helmet } from 'react-helmet';
 
 const BlogPostDetails = ({recommendedServices}) => {
     const { id } = useParams();
@@ -70,6 +69,12 @@ const BlogPostDetails = ({recommendedServices}) => {
   return (
     <div className="blog-post-details">
         <div className='main-content'>
+        <Helmet>
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <title>{blogPost.title} </title>
+        <meta name="description" content="- List of blogs in prettygigs.com.ng covering tech news, digital service news, etc. ." />
+
+      </Helmet>
       <h2 className="blog-post-details__title">{blogPost.title}</h2>
       <p className="blog-post-details__author">Author: {blogPost.author}</p>
       <p className="blog-post-details__date">Date: {format(new Date(blogPost.date), 'MMMM d, yyyy')}</p>

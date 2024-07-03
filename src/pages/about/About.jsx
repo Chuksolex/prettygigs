@@ -1,10 +1,17 @@
 import React from 'react';
 import './About.scss';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
   return (
     
     <div className="about-container">
+       <Helmet>
+       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />     
+              <title>About Us </title>
+        <meta name="description" content="Prettygigs is a digital service platform offering various gigs: graphics design, web design, data analytics, writing and so on. ." />
+
+        </Helmet>
 
       <div className='d-block'>
       <h1 className='aboutHeading'>About Us</h1>
