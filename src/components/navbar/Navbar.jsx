@@ -114,6 +114,11 @@ function Navbar() {
                 Live-Tutor
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to={"/career"} onClick={handleLinkClick}>
+                Career
+              </Link>
+            </li>
           </ul>
           <ul className="navbar-nav align-items-center mb-2 mb-lg-0"> {/* Align to the center vertically */}
           <li className="nav-item">

@@ -46,6 +46,7 @@ import VerifyEmail from './pages/verifyEmail/VerifyEmail.jsx';
 import Success from './pages/success/Success.jsx';
 import SimpleUpload from './utils/simpleUpload.jsx';
 import ReactGA from 'react-ga4';
+import Career from './pages/career/Career.jsx';
 
 
 
@@ -136,6 +137,7 @@ function App() {
         {path: "/verify-email", element: <VerifyEmail />},
         {path: "/success", element: <Success />},
         {path: "/simpleupload", element: <SimpleUpload />},
+        {path: "/career", element: <Career />},
 
 
 

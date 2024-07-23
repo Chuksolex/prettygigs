@@ -1,0 +1,33 @@
+.career{
+    text-align: center;
+    h1{
+        font-size: 26px;
+        color: green;
+    }
+    hr{
+        width: 40%;
+        align-self: center;
+        position: relative;
+        left: calc(50% - 20%);
+        border: 4px green dashed;
+    }
+    p{
+        text-align: center;
+    }
+}
+
+.innerContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+   
+}
+.lookingfor{
+    width: 75%;
+    text-align: left;
+}
+.joinourteam{
+  width: 25%;
+  text-align: left;
+}
