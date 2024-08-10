@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import ReactGa from "react-ga4";
+import ReactGA from "react-ga4";
 
 const ProjectRequest = () => {
   ReactGA.send(
